@@ -1,0 +1,261 @@
+/* ================== RESET ================== */
+* {
+    box-sizing: border-box;
+}
+
+/* ================== FONDO GENERAL ================== */
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 10px;
+
+    background-image: url('FONDO.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ================== CONTENEDOR ================== */
+.container {
+    background: rgba(255,255,255,0.9);
+    padding: 15px;
+    border-radius: 10px;
+
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ================== TITULO ================== */
+h1 {
+    text-align: center;
+    font-size: 22px;
+}
+
+/* ================== FORMULARIO ================== */
+form {
+    display: grid;
+    gap: 10px;
+    margin: 0 auto 20px auto;
+    max-width: 600px;
+
+    padding: 15px;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.85);
+    position: relative;
+}
+
+/* 🔥 ESCUDO SOLO EN PC */
+form::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 300px;
+    height: 300px;
+
+    background-image: url('RI6DRCAMPOS.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    opacity: 0.1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+form * {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================== INPUTS ================== */
+input,
+select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* ================== BOTONES ================== */
+button {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background: #28a745;
+    color: white;
+}
+
+/* ================== TABLA ================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: white;
+}
+
+/* ENCABEZADO */
+th {
+    background: #333;
+    color: white;
+}
+
+/* CELDAS */
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 6px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* ================== ESTADOS ================== */
+.urgente { background-color: #ffb3b3; }
+.cumplido { background-color: #b8ffb8; }
+.vencido { background-color: #ff4d4d; color: white; }
+
+/* ================== BUSCADOR ================== */
+#buscador {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    display: block;
+}
+
+/* ================== FILTROS ================== */
+.filtros {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.filtros button {
+    margin: 3px;
+    opacity: 0.7;
+}
+
+.filtros button.activo {
+    opacity: 1;
+    border: 2px solid black;
+}
+
+/* COLORES */
+#btn-todos { background: #555; color: white; }
+#btn-pendiente { background: orange; color: white; }
+#btn-cumplido { background: green; color: white; }
+#btn-urgente { background: red; color: white; }
+
+/* ================== CHECKBOXES ================== */
+.elementos-box,
+.secciones-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+/* ================== EXPORTAR ================== */
+button[onclick="exportarExcel()"] {
+    background: #007bff;
+    color: white;
+    display: block;
+    margin: 10px auto;
+}
+
+/* ================== PANEL COMANDO ================= */
+
+.panel-comando {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    z-index: 9999;
+}
+
+.comando-box {
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.comando-box span {
+    display: block;
+    font-size: 18px;
+}
+
+.rojo { background: #b30000; }
+.naranja { background: #ff8000; }
+.verde { background: #008000; }
+
+/* ================== ALERTA ================= */
+@keyframes parpadeo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.alerta-activa {
+    animation: parpadeo 1s infinite;
+}
+
+/* ================== RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 5px;
+        background-attachment: scroll; /* 🔥 evita bug en celular */
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    form::after {
+        display: none; /* 🔥 QUITA ESCUDO EN CELULAR */
+    }
+
+    input, select, button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .elementos-box,
+    .secciones-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .panel-comando {
+        position: static; /* 🔥 BAJA EL PANEL */
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+
+    .comando-box {
+        flex: 1;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "69f6a83277cbe3a2da129acd",
+    "numero_documento": "DIV. 4 S. V AC/OC. Nº 7777777",
+    "descripcion": "DDHH",
+    "elemento": "FOTOGRAMA, RR.NN. FIRMADA",
+    "seccion": "S. V RR.PP. RI 6",
+    "instructor": "TTE QUISPE",
+    "fecha_recepcion": "2026-05-02",
+    "fecha_limite": "2026-05-06",
+    "estado": "Pendiente",
+    "oficio_respuesta": "",
+    "fecha_respuesta": "",
+    "createdAt": "2026-05-03T01:43:14.720Z",
+    "updatedAt": "2026-05-03T01:43:14.720Z",
+    "__v": 0,
+    "eliminado_por": "admin",
+    "fecha_eliminado": "2/5/2026, 9:57:25 p. m."
+  },
+  {
+    "_id": "69f6b8eb809797b88d4ae55a",
+    "numero_documento": "DPTO I. Nº 434/26",
+    "descripcion": "NI IDEA",
+    "elemento": "MATRIZ, RR.NN. FIRMADA, RR.NN.",
+    "seccion": "S. V RR.PP. RI 6",
+    "instructor": "MY NAVARRO",
+    "fecha_recepcion": "2026-04-29",
+    "fecha_limite": "2026-05-04",
+    "estado": "Cumplido",
+    "oficio_respuesta": "00000001",
+    "fecha_respuesta": "2026-05-02",
+    "createdAt": "2026-05-03T02:54:35.723Z",
+    "updatedAt": "2026-05-03T02:55:14.976Z",
+    "__v": 0,
+    "eliminado_por": "parado",
+    "fecha_eliminado": "2/5/2026, 10:55:22 p. m."
+  }
+]

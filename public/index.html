@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Control Documental</title>
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<div style="position: fixed; top: 10px; left: 10px;"> 
+  <button onclick="logout()" style="background: red; color: white; padding: 10px; border: none; cursor: pointer;"> 
+    CERRAR SESIÓN 
+  </button> 
+</div>
+
+
+<h2>GESTIÓN DE BACKUPS</h2>
+
+<button onclick="cargarBackups()">Ver Backups</button>
+
+<ul id="listaBackups"></ul>
+
+                
+<div class="container">
+
+<h1>CONTROL DOCUMENTAL</h1>
+
+<form id="formulario">
+
+<!-- ================= TIPO DOCUMENTO ================= -->
+
+<select id="tipo_documento" required>
+<option value="">Seleccione Tipo Documento</option>
+<option>IGE. EJTO. Nº</option>
+<option>DPTO I. Nº</option>
+<option>DPTO II. Nº</option>
+<option>DPTO III. Nº</option>
+<option>DPTO IV. Nº</option>
+<option>DPTO VI. Nº</option>
+<option>DPTO VII. Nº</option>
+<option>DPTO VIII. Nº</option>
+<option>DIV. 4 S. I PERS. Nº</option>
+<option>DIV. 4 S. II ICIA. Nº</option>
+<option>DIV. 4 S. III OPS. Nº</option>
+<option>DIV. 4 S. IV LOG. Nº</option>
+<option>DIV. 4 S. V AC/OC. Nº</option>
+<option>DIV. 4 S. V RRPP. Nº</option>
+<option>DIV. 4 INSP. Nº</option>
+<option value="OTROS">OTROS</option>
+</select>
+
+<input type="text" id="otro_tipo" placeholder="Otro tipo documental" style="display:none;">
+<input type="text" id="numero" placeholder="Número" required>
+
+<!-- ================= DESCRIPCION ================= -->
+
+<input type="text" id="descripcion" placeholder="ANTECEDENTES" required>
+
+<!-- ================= ELEMENTOS ================= -->
+<h2>DOCUMENTO DE RESPUESTA</h2>
+<div class="elementos-box">
+
+<label><input type="checkbox" value="INFORME"> INFORME</label>
+<label><input type="checkbox" value="FOTOGRAMA"> FOTOGRAMA</label>
+<label><input type="checkbox" value="MATRIZ"> MATRIZ</label>
+<label><input type="checkbox" value="RR.NN. FIRMADA"> RR.NN. FIRMADA</label>
+<label><input type="checkbox" value="RR.NN."> RR.NN.</label>
+
+<label><input type="checkbox" id="check_otro"> OTROS</label>
+<input type="text" id="otro_elemento" placeholder="Otro elemento" style="display:none;">
+
+</div>
+
+<!-- ================= SECCIONES ================= -->
+
+<label>SECCIONES DESTINO</label>
+
+<div class="secciones-box">
+
+<label><input type="checkbox" value="S. I PERS. RI 6"> S. I PERS. RI 6</label>
+<label><input type="checkbox" value="S. II ICIA. RI 6"> S. II ICIA. RI 6</label>
+<label><input type="checkbox" value="S. III OPS. RI 6"> S. III OPS. RI 6</label>
+<label><input type="checkbox" value="S. IV LOG. RI 6"> S. IV LOG. RI 6</label>
+<label><input type="checkbox" value="S. V AC/OC. RI 6"> S. V AC/OC. RI 6</label>
+<label><input type="checkbox" value="S. V RR.PP. RI 6"> S. V RR.PP. RI 6</label>
+<label><input type="checkbox" value="AYUDANTIA RI 6"> AYUDANTIA RI 6</label>
+<label><input type="checkbox" value="DEPORTES RI 6"> DEPORTES RI 6</label>
+
+<!-- 🔥 NUEVO -->
+<label><input type="checkbox" value="INSP. RI 6"> INSP. RI 6</label>
+
+<!-- 🔥 OTROS -->
+<label>
+    <input type="checkbox" id="check_otros">
+    OTROS
+</label>
+
+<input type="text"
+       id="otros_seccion"
+       placeholder="Escriba otra sección"
+       style="display:none; margin-top:5px;">
+</div>
+<!-- ================= DATOS ================= -->
+
+<input type="text" id="instructor" placeholder="Instructor Responsable" required>
+<input type="date" id="fecha_recepcion" required>
+<input type="date" id="fecha_limite" required>
+
+<!-- ================= RESPUESTA ================= -->
+
+<h3>REGISTRO DE RESPUESTA</h3>
+
+<input 
+    type="text" 
+    id="oficio_respuesta" 
+    placeholder="N° Oficio de Respuesta (ej: DPTO I Nº 123)"
+>
+
+<input 
+    type="date" 
+    id="fecha_respuesta"
+>
+
+<select id="estado">
+<option>Pendiente</option>
+<option>Cumplido</option>
+</select>
+
+<!-- ================= BOTON ================= -->
+
+<button type="submit">Guardar</button>
+
+</form>
+
+<!-- ================= EXPORTAR ================= -->
+
+<button 
+    id="btn-exportar"
+    onclick="exportarExcel()"
+>
+    EXPORTAR A EXCEL
+</button>
+<!-- ================= BUSCADOR ================= -->
+
+<input 
+type="text" 
+id="buscador" 
+placeholder="Buscar documento..." 
+onkeyup="aplicarFiltros()"
+>
+
+
+
+
+        <div class="panel-comando">
+
+            <div class="comando-box rojo">
+                VENCIDOS
+                <span id="count-vencidos">0</span>
+            </div>
+
+            <div class="comando-box naranja">
+                URGENTES
+                <span id="count-urgentes">0</span>
+            </div>
+
+            <div class="comando-box verde">
+                CUMPLIDOS
+                <span id="count-cumplidos">0</span>
+            </div>
+
+        </div>
+
+<!-- ================= FILTROS ================= -->
+
+
+
+
+
+
+
+
+<div class="filtros">
+
+<button id="btn-todos" onclick="setFiltro('TODOS')">TODOS</button>
+<button id="btn-pendiente" onclick="setFiltro('Pendiente')">PENDIENTE</button>
+<button id="btn-cumplido" onclick="setFiltro('Cumplido')">CUMPLIDO</button>
+<button id="btn-urgente" onclick="setFiltro('URGENTE')">URGENTE</button>
+
+</div>
+
+<!-- ================= TABLA ================= -->
+
+<table>
+
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Documento</th>
+    <th>Antecedentes</th>
+    <th>Elemento</th>
+    <th>Sección</th>
+    <th>Instructor</th>
+    <th>Recepción</th>
+    <th>Límite</th>
+    <th>Oficio Respuesta</th>
+    <th>Fecha Respuesta</th>
+    <th>Estado</th>
+    <th>Acciones</th>
+</tr>
+</thead>
+
+<tbody id="tabla"></tbody>
+
+</table>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+<audio id="sonidoAlerta" src="alerta.mp3"></audio>
+
+        <audio id="alerta-sonido">
+            <source src="alerta.mp3" type="audio/mpeg">
+        </audio>
+
+
+
+
+                                        
+</body>
+</html>

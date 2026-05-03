@@ -1,0 +1,231 @@
+[
+  {
+    "usuario": "admin",
+    "documento": "DIV. 4 S. III OPS. Nº 456",
+    "antes": {
+      "id": 1777667468814,
+      "numero_documento": "DIV. 4 S. III OPS. Nº 456",
+      "descripcion": "hitos militares",
+      "elemento": "MATRIZ",
+      "seccion": "S. III OPS. RI 6",
+      "instructor": "MY NAVARRO",
+      "fecha_recepcion": "2026-05-01",
+      "fecha_limite": "2026-05-10",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": ""
+    },
+    "despues": {
+      "id": 1777667468814,
+      "numero_documento": "DIV. 4 S. III OPS. Nº 456",
+      "descripcion": "hitos militares",
+      "elemento": "MATRIZ",
+      "seccion": "S. III OPS. RI 6",
+      "instructor": "MY NAVARRO",
+      "fecha_recepcion": "2026-05-01",
+      "fecha_limite": "2026-05-10",
+      "estado": "Cumplido",
+      "oficio_respuesta": "123",
+      "fecha_respuesta": "2026-05-01"
+    },
+    "fecha": "1/5/2026, 11:11:36 p. m."
+  },
+  {
+    "usuario": "editor1",
+    "documento": "DPTO II. Nº 777",
+    "antes": {
+      "id": 1777693075079,
+      "numero_documento": "DPTO II. Nº 777",
+      "descripcion": "lealtad estudio",
+      "elemento": "INFORME",
+      "seccion": "S. II ICIA. RI 6",
+      "instructor": "sgto quispe",
+      "fecha_recepcion": "2026-04-27",
+      "fecha_limite": "2026-04-30",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": ""
+    },
+    "despues": {
+      "id": 1777693075079,
+      "numero_documento": "DPTO II. Nº 777",
+      "descripcion": "lealtad estudio",
+      "elemento": "INFORME",
+      "seccion": "S. II ICIA. RI 6",
+      "instructor": "sgto quispe",
+      "fecha_recepcion": "2026-04-27",
+      "fecha_limite": "2026-04-30",
+      "estado": "Cumplido",
+      "oficio_respuesta": "444",
+      "fecha_respuesta": "2026-05-01"
+    },
+    "fecha": "1/5/2026, 11:38:12 p. m."
+  },
+  {
+    "usuario": "admin",
+    "documento": "DIV. 4 S. III OPS. Nº 434/26",
+    "antes": {
+      "id": 1777743629714,
+      "numero_documento": "DIV. 4 S. III OPS. Nº 434/26",
+      "descripcion": "ASCENSO A DRAGONEANTES Y CABOS DEL 1ER ELON CAT/26",
+      "elemento": "INFORME, FOTOGRAMA",
+      "seccion": "S. III OPS. RI 6",
+      "instructor": "MY NAVARRO",
+      "fecha_recepcion": "2026-05-02",
+      "fecha_limite": "2026-05-12",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": ""
+    },
+    "despues": {
+      "id": 1777743629714,
+      "numero_documento": "DIV. 4 S. III OPS. Nº 434/26",
+      "descripcion": "ASCENSO A DRAGONEANTES Y CABOS DEL 1ER ELON CAT/26",
+      "elemento": "INFORME, FOTOGRAMA",
+      "seccion": "S. III OPS. RI 6",
+      "instructor": "MY NAVARRO",
+      "fecha_recepcion": "2026-05-02",
+      "fecha_limite": "2026-05-12",
+      "estado": "Cumplido",
+      "oficio_respuesta": "00000001",
+      "fecha_respuesta": "2026-05-02"
+    },
+    "fecha": "2/5/2026, 3:46:46 p. m."
+  },
+  {
+    "usuario": "admin",
+    "documento": "DIV. 4 S. III OPS. Nº 434/26",
+    "antes": {
+      "id": 1777743629714,
+      "numero_documento": "DIV. 4 S. III OPS. Nº 434/26",
+      "descripcion": "ASCENSO A DRAGONEANTES Y CABOS DEL 1ER ELON CAT/26",
+      "elemento": "INFORME, FOTOGRAMA",
+      "seccion": "S. III OPS. RI 6",
+      "instructor": "MY NAVARRO",
+      "fecha_recepcion": "2026-05-02",
+      "fecha_limite": "2026-05-12",
+      "estado": "Cumplido",
+      "oficio_respuesta": "00000001",
+      "fecha_respuesta": "2026-05-02"
+    },
+    "despues": {
+      "id": 1777743629714,
+      "numero_documento": "DIV. 4 S. III OPS. Nº 434/26",
+      "descripcion": "ASCENSO A DRAGONEANTES Y CABOS DEL 1ER ELON CAT/26",
+      "elemento": "INFORME, FOTOGRAMA",
+      "seccion": "S. III OPS. RI 6",
+      "instructor": "MY NAVARRO",
+      "fecha_recepcion": "2026-05-02",
+      "fecha_limite": "2026-05-12",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": ""
+    },
+    "fecha": "2/5/2026, 3:47:02 p. m."
+  },
+  {
+    "usuario": "admin",
+    "documento": "DPTO III. Nº 212121212122",
+    "antes": {
+      "id": 1777757781727,
+      "numero_documento": "DPTO III. Nº 212121212122",
+      "descripcion": "NI IDEA",
+      "elemento": "INFORME",
+      "seccion": "S. V RR.PP. RI 6",
+      "instructor": "SBTTE CHACON",
+      "fecha_recepcion": "2026-04-04",
+      "fecha_limite": "2026-05-03",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": ""
+    },
+    "despues": {
+      "id": 1777757781727,
+      "numero_documento": "DPTO III. Nº 212121212122",
+      "descripcion": "NI IDEA",
+      "elemento": "INFORME",
+      "seccion": "S. V RR.PP. RI 6",
+      "instructor": "SBTTE CHACON",
+      "fecha_recepcion": "2026-04-04",
+      "fecha_limite": "2026-05-03",
+      "estado": "Cumplido",
+      "oficio_respuesta": "0003",
+      "fecha_respuesta": "2026-05-02"
+    },
+    "fecha": "2/5/2026, 5:36:38 p. m."
+  },
+  {
+    "usuario": "admin",
+    "documento": "DPTO VI. Nº 555555",
+    "antes": {
+      "_id": "69f6a96db81dcff9c6113a26",
+      "numero_documento": "DPTO VI. Nº 555555",
+      "descripcion": "TRASPORTES LLANTAS",
+      "elemento": "INFORME, MATRIZ, RR.NN.",
+      "seccion": "S. V AC/OC. RI 6",
+      "instructor": "SBTTE CHACON",
+      "fecha_recepcion": "2026-04-28",
+      "fecha_limite": "2026-05-04",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": "",
+      "createdAt": "2026-05-03T01:48:29.417Z",
+      "updatedAt": "2026-05-03T01:48:29.417Z",
+      "__v": 0
+    },
+    "despues": {
+      "_id": "69f6a96db81dcff9c6113a26",
+      "numero_documento": "DPTO VI. Nº 555555",
+      "descripcion": "TRASPORTES LLANTAS",
+      "elemento": "INFORME, MATRIZ, RR.NN.",
+      "seccion": "S. V AC/OC. RI 6",
+      "instructor": "SBTTE CHACON",
+      "fecha_recepcion": "2026-04-28",
+      "fecha_limite": "2026-05-04",
+      "estado": "Cumplido",
+      "oficio_respuesta": "0003",
+      "fecha_respuesta": "2026-05-02",
+      "createdAt": "2026-05-03T01:48:29.417Z",
+      "updatedAt": "2026-05-03T02:04:05.123Z",
+      "__v": 0
+    },
+    "fecha": "2/5/2026, 10:04:05 p. m."
+  },
+  {
+    "usuario": "parado",
+    "documento": "DPTO I. Nº 434/26",
+    "antes": {
+      "_id": "69f6b8eb809797b88d4ae55a",
+      "numero_documento": "DPTO I. Nº 434/26",
+      "descripcion": "NI IDEA",
+      "elemento": "MATRIZ, RR.NN. FIRMADA",
+      "seccion": "S. V RR.PP. RI 6",
+      "instructor": "MY NAVARRO",
+      "fecha_recepcion": "2026-04-29",
+      "fecha_limite": "2026-05-04",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": "",
+      "createdAt": "2026-05-03T02:54:35.723Z",
+      "updatedAt": "2026-05-03T02:54:35.723Z",
+      "__v": 0
+    },
+    "despues": {
+      "_id": "69f6b8eb809797b88d4ae55a",
+      "numero_documento": "DPTO I. Nº 434/26",
+      "descripcion": "NI IDEA",
+      "elemento": "MATRIZ, RR.NN. FIRMADA, RR.NN.",
+      "seccion": "S. V RR.PP. RI 6",
+      "instructor": "MY NAVARRO",
+      "fecha_recepcion": "2026-04-29",
+      "fecha_limite": "2026-05-04",
+      "estado": "Cumplido",
+      "oficio_respuesta": "00000001",
+      "fecha_respuesta": "2026-05-02",
+      "createdAt": "2026-05-03T02:54:35.723Z",
+      "updatedAt": "2026-05-03T02:55:14.976Z",
+      "__v": 0
+    },
+    "fecha": "2/5/2026, 10:55:15 p. m."
+  }
+]

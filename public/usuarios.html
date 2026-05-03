@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Panel de Usuarios</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+input, select {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid white;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>PANEL DE USUARIOS</h1>
+
+<!-- FORMULARIO -->
+<form id="formUsuario">
+
+<input type="text" id="usuario" placeholder="Usuario" required>
+
+<input type="password" id="password" placeholder="Contraseña" required>
+
+<select id="rol">
+    <option value="LECTURA">LECTURA</option>
+    <option value="EDITOR">EDITOR</option>
+    <option value="ADMIN">ADMIN</option>
+</select>
+
+<select id="rango">
+    <option value="SOLDADO ESTAFETA">SOLDADO ESTAFETA</option>
+    <option value="SARGENTO">SARGENTO</option>
+    <option value="SUB OFICIAL">SUB OFICIAL</option>
+    <option value="SUBTENIENTE">SUBTENIENTE</option>
+    <option value="TENIENTE">TENIENTE</option>
+    <option value="TENIENTE CORONEL">TENIENTE CORONEL</option>
+    <option value="CAPITAN">CAPITAN</option>
+    <option value="MAYOR">MAYOR</option>
+    <option value="CORONEL">CORONEL</option>
+</select>
+
+<button type="submit">
+    CREAR USUARIO
+</button>
+
+</form>
+
+<h3>USUARIOS REGISTRADOS</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Rol</th>
+            <th>Rango</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="tablaUsuarios"></tbody>
+</table>
+
+            
+
+
+<script>
+                    const usuario = localStorage.getItem('usuario');
+
+                    if(!usuario) {
+                        alert('Debe iniciar sesión');
+                        window.location.href = '/login.html';
+                    }
+// 🔐 BLOQUEO POR ROL
+const rol = localStorage.getItem('rol');
+
+if(rol !== 'ADMIN') {
+    alert('Acceso restringido');
+    window.location.href = '/index.html';
+}
+
+// ================= CARGAR USUARIOS =================
+
+async function cargarUsuarios() {
+
+    const res = await fetch('/usuarios');
+
+    if(!res.ok) {
+        alert('No autorizado');
+        return;
+    }
+
+    const usuarios = await res.json();
+
+    const tabla = document.getElementById('tablaUsuarios');
+
+    tabla.innerHTML = '';
+
+    usuarios.forEach(u => {
+
+        tabla.innerHTML += `
+            <tr>
+                <td>${u.usuario}</td>
+                <td>${u.rol}</td>
+                <td>${u.rango}</td>
+                <td>
+                    <button onclick="eliminarUsuario('${u.usuario}')">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+// ================= ELIMINAR =================
+
+async function eliminarUsuario(usuario) {
+
+    if(!confirm('¿Eliminar usuario?')) return;
+
+    await fetch('/usuarios/' + usuario, {
+        method: 'DELETE'
+    });
+
+    cargarUsuarios();
+}
+
+// ================= CREAR =================
+
+document.getElementById('formUsuario')
+.addEventListener('submit', async (e) => {
+
+    e.preventDefault();
+
+    const usuario = document.getElementById('usuario').value;
+    const password = document.getElementById('password').value;
+    const rol = document.getElementById('rol').value;
+    const rango = document.getElementById('rango').value;
+
+    const res = await fetch('/usuarios', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario, password, rol, rango })
+    });
+
+    const data = await res.json();
+
+    alert(data.mensaje || 'Usuario creado');
+
+    e.target.reset();
+
+    cargarUsuarios();
+});
+
+// ================= INICIO =================
+
+cargarUsuarios();
+
+</script>
+
+</body>
+</html>

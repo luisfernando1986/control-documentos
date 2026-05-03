@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Papelera</title>
+</head>
+<body>
+
+<h1>DOCUMENTOS ELIMINADOS</h1>
+
+<table border="1">
+<thead>
+    <tr>
+        <th>ID</th>
+        <th>Documento</th>
+        <th>Eliminado por</th>
+        <th>Fecha</th>
+        <th>Acción</th>
+    </tr>
+</thead>
+
+<tbody id="tabla"></tbody>
+</table>
+
+<script>
+
+async function cargar() {
+
+    const res = await fetch('/eliminados');
+    const data = await res.json();
+
+    const tabla = document.getElementById('tabla');
+
+    tabla.innerHTML = '';
+
+    data.forEach(d => {
+
+        tabla.innerHTML += `
+        <tr>
+            <td>${d._id}</td>
+            <td>${d.numero_documento}</td>
+            <td>${d.eliminado_por}</td>
+            <td>${d.fecha_eliminado || ''}</td>
+            <td>
+                <button onclick="restaurar('${d._id}')">
+                    Restaurar
+                </button>
+            </td>
+        </tr>
+        `;
+    });
+}
+
+async function restaurar(id) {
+
+    const confirmar = confirm('¿Restaurar este documento?');
+
+    if(!confirmar) return;
+
+    await fetch('/restaurar/' + id, {
+        method: 'POST'
+    });
+
+    alert('Documento restaurado');
+
+    cargar();
+}
+
+cargar();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,788 @@
+[
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026 9:27:36 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026 9:42:07 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026 9:52:09 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026 9:58:43 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DPTO VIII. Nº 1000",
+    "fecha": "1/5/2026 9:59:07 p. m."
+  },
+  {
+    "usuario": "oficial",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026 10:00:18 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026 10:01:50 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:37:26 p. m."
+  },
+  {
+    "usuario": "oficial",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:37:42 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:41:39 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:44:02 p. m."
+  },
+  {
+    "usuario": "oficial",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:46:44 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:48:56 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:50:19 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:55:10 p. m."
+  },
+  {
+    "usuario": "oficial",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:55:22 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 10:55:54 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 11:11:18 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "EDITÓ DOCUMENTO",
+    "documento": "DIV. 4 S. III OPS. Nº 456",
+    "fecha": "1/5/2026, 11:11:36 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 11:35:17 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 INSP. Nº 855",
+    "fecha": "1/5/2026, 11:35:49 p. m."
+  },
+  {
+    "usuario": "editor1",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 11:36:42 p. m."
+  },
+  {
+    "usuario": "oficial",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 11:37:04 p. m."
+  },
+  {
+    "usuario": "editor1",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "1/5/2026, 11:37:19 p. m."
+  },
+  {
+    "usuario": "editor1",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DPTO II. Nº 777",
+    "fecha": "1/5/2026, 11:37:55 p. m."
+  },
+  {
+    "usuario": "editor1",
+    "accion": "EDITÓ DOCUMENTO",
+    "documento": "DPTO II. Nº 777",
+    "fecha": "1/5/2026, 11:38:12 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 12:18:07 a. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ USUARIO",
+    "documento": "luis",
+    "fecha": "2/5/2026, 12:19:11 a. m."
+  },
+  {
+    "usuario": "luis",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 12:19:36 a. m."
+  },
+  {
+    "usuario": "luis",
+    "accion": "CREÓ USUARIO",
+    "documento": "fernando",
+    "fecha": "2/5/2026, 12:20:02 a. m."
+  },
+  {
+    "usuario": "fernando",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 12:20:14 a. m."
+  },
+  {
+    "usuario": "fernando",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DPTO IV. Nº 456",
+    "fecha": "2/5/2026, 12:26:14 a. m."
+  },
+  {
+    "usuario": "luis",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 1:23:39 p. m."
+  },
+  {
+    "usuario": "fernando",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 1:25:33 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 1:27:18 p. m."
+  },
+  {
+    "usuario": "oficial",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 1:27:35 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 1:35:27 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ USUARIO",
+    "documento": "pardomurillo",
+    "fecha": "2/5/2026, 1:36:07 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. III OPS. Nº 434/26",
+    "fecha": "2/5/2026, 1:40:29 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. III OPS. Nº 435/26",
+    "fecha": "2/5/2026, 1:43:24 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. IV LOG. Nº 559/26",
+    "fecha": "2/5/2026, 1:46:27 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. I PERS. Nº 620/26",
+    "fecha": "2/5/2026, 1:48:35 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. IV LOG. Nº 557/26",
+    "fecha": "2/5/2026, 1:51:24 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 INSP. Nº 449/26",
+    "fecha": "2/5/2026, 1:53:42 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. IV LOG. Nº 556/26",
+    "fecha": "2/5/2026, 1:58:46 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 2:20:13 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 2:30:43 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ USUARIO",
+    "documento": "luis",
+    "fecha": "2/5/2026, 2:32:12 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 2:47:50 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 2:55:53 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "IGE. EJTO. Nº 2555555555",
+    "fecha": "2/5/2026, 2:56:19 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ DOCUMENTO",
+    "documento": "IGE. EJTO. Nº 2555555555",
+    "fecha": "2/5/2026, 2:56:34 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "RESTAURÓ DOCUMENTO",
+    "documento": "IGE. EJTO. Nº 2555555555",
+    "fecha": "2/5/2026, 2:59:31 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ DOCUMENTO",
+    "documento": "IGE. EJTO. Nº 2555555555",
+    "fecha": "2/5/2026, 2:59:42 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:07:12 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:10:38 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:12:41 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:12:46 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:39:16 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:39:20 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:39:23 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:45:16 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "EDITÓ DOCUMENTO",
+    "documento": "DIV. 4 S. III OPS. Nº 434/26",
+    "fecha": "2/5/2026, 3:46:46 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "EDITÓ DOCUMENTO",
+    "documento": "DIV. 4 S. III OPS. Nº 434/26",
+    "fecha": "2/5/2026, 3:47:02 p. m."
+  },
+  {
+    "usuario": "oficial",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:48:22 p. m."
+  },
+  {
+    "usuario": "fernando",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:49:01 p. m."
+  },
+  {
+    "usuario": "fernando",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:54:00 p. m."
+  },
+  {
+    "usuario": "oficial",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:54:19 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:54:42 p. m."
+  },
+  {
+    "usuario": "pardomurillo",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:55:41 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:55:55 p. m."
+  },
+  {
+    "usuario": "pardomurillo",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:56:06 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 3:56:12 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 4:23:20 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "RESTAURÓ DOCUMENTO",
+    "documento": "IGE. EJTO. Nº 2555555555",
+    "fecha": "2/5/2026, 4:25:51 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ DOCUMENTO",
+    "documento": "IGE. EJTO. Nº 2555555555",
+    "fecha": "2/5/2026, 4:26:00 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ USUARIO",
+    "documento": "belckam",
+    "fecha": "2/5/2026, 4:26:33 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 4:28:24 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ USUARIO",
+    "documento": "belckam",
+    "fecha": "2/5/2026, 4:28:37 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ USUARIO",
+    "documento": "pardomurillo",
+    "fecha": "2/5/2026, 4:28:40 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ USUARIO",
+    "documento": "fernando",
+    "fecha": "2/5/2026, 4:28:43 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ USUARIO",
+    "documento": "luisfernando",
+    "fecha": "2/5/2026, 4:29:01 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ USUARIO",
+    "documento": "belckamcristofer",
+    "fecha": "2/5/2026, 4:29:21 p. m."
+  },
+  {
+    "usuario": "belckamcristofer",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 4:29:39 p. m."
+  },
+  {
+    "usuario": "luisfernando",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 4:30:13 p. m."
+  },
+  {
+    "usuario": "luisfernando",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DPTO II. Nº 212121212",
+    "fecha": "2/5/2026, 4:30:41 p. m."
+  },
+  {
+    "usuario": "luisfernando",
+    "accion": "ELIMINÓ DOCUMENTO",
+    "documento": "DPTO II. Nº 212121212",
+    "fecha": "2/5/2026, 4:30:46 p. m."
+  },
+  {
+    "usuario": "luisfernando",
+    "accion": "CREÓ USUARIO",
+    "documento": "pardomurillo",
+    "fecha": "2/5/2026, 4:45:14 p. m."
+  },
+  {
+    "usuario": "luisfernando",
+    "accion": "CREÓ USUARIO",
+    "documento": "cordero",
+    "fecha": "2/5/2026, 4:45:39 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:04:33 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:11:50 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:12:09 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "LOGIN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:23:11 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "LOGIN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:23:20 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:33:00 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ USUARIO",
+    "documento": "belckamcristofer",
+    "fecha": "2/5/2026, 5:34:05 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:35:55 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DPTO III. Nº 212121212122",
+    "fecha": "2/5/2026, 5:36:21 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "EDITÓ DOCUMENTO",
+    "documento": "DPTO III. Nº 212121212122",
+    "fecha": "2/5/2026, 5:36:38 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ DOCUMENTO",
+    "documento": "DPTO III. Nº 212121212122",
+    "fecha": "2/5/2026, 5:36:46 p. m."
+  },
+  {
+    "usuario": "pardomurillo",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:38:54 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:39:53 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ USUARIO",
+    "documento": "belckamcristofer",
+    "fecha": "2/5/2026, 5:40:11 p. m."
+  },
+  {
+    "usuario": "belckamcristofer",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:40:21 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:40:28 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:49:26 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 5:49:58 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 8:13:45 p. m."
+  },
+  {
+    "usuario": "belckamcristofer",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 8:14:00 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 8:15:30 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 9:29:18 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. I PERS. Nº 9999999999",
+    "fecha": "2/5/2026, 9:29:40 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 9:36:17 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DPTO VII. Nº 8888888",
+    "fecha": "2/5/2026, 9:36:43 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. I PERS. Nº 9999999999",
+    "fecha": "2/5/2026, 9:37:00 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 9:42:47 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DIV. 4 S. V AC/OC. Nº 7777777",
+    "fecha": "2/5/2026, 9:43:14 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 9:47:50 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DPTO VI. Nº 555555",
+    "fecha": "2/5/2026, 9:48:29 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ DOCUMENTO",
+    "documento": "DPTO VII. Nº 8888888",
+    "fecha": "2/5/2026, 9:48:53 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 9:50:47 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 9:52:10 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 9:57:20 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "ELIMINÓ DOCUMENTO",
+    "documento": "DIV. 4 S. V AC/OC. Nº 7777777",
+    "fecha": "2/5/2026, 9:57:25 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 9:59:53 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 10:03:50 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "EDITÓ DOCUMENTO",
+    "documento": "DPTO VI. Nº 555555",
+    "fecha": "2/5/2026, 10:04:05 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 10:18:29 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 10:43:49 p. m."
+  },
+  {
+    "usuario": "admin",
+    "accion": "CREÓ USUARIO",
+    "documento": "parado",
+    "fecha": "2/5/2026, 10:46:24 p. m."
+  },
+  {
+    "usuario": "parado",
+    "accion": "INICIÓ SESIÓN",
+    "documento": "",
+    "fecha": "2/5/2026, 10:46:39 p. m."
+  }
+]

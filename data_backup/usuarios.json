@@ -1,0 +1,44 @@
+[
+  {
+    "usuario": "admin",
+    "password": "1234",
+    "rol": "ADMIN",
+    "rango": "COMANDO"
+  },
+  {
+    "usuario": "editor1",
+    "password": "2222",
+    "rol": "EDITOR",
+    "rango": "CAPITAN"
+  },
+  {
+    "usuario": "oficial",
+    "password": "1111",
+    "rol": "LECTURA",
+    "rango": "TENIENTE"
+  },
+  {
+    "usuario": "luisfernando",
+    "password": "4321",
+    "rol": "ADMIN",
+    "rango": "SUB OFICIAL"
+  },
+  {
+    "usuario": "pardomurillo",
+    "password": "123456789",
+    "rol": "EDITOR",
+    "rango": "MAYOR"
+  },
+  {
+    "usuario": "cordero",
+    "password": "123456789",
+    "rol": "EDITOR",
+    "rango": "TENIENTE CORONEL"
+  },
+  {
+    "usuario": "belckamcristofer",
+    "password": "1234",
+    "rol": "LECTURA",
+    "rango": "SOLDADO ESTAFETA"
+  }
+]

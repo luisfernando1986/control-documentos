@@ -1,0 +1,400 @@
+{
+  "documentos": [
+    {
+      "_id": "69f6a6abcd30e1e82bf3b6ee",
+      "numero_documento": "DPTO VII. Nº 8888888",
+      "descripcion": "NI IDEA",
+      "elemento": "INFORME, RR.NN. FIRMADA",
+      "seccion": "S. V RR.PP. RI 6",
+      "instructor": "TTE QUISPE",
+      "fecha_recepcion": "2026-05-02",
+      "fecha_limite": "2026-05-04",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": "",
+      "createdAt": "2026-05-03T01:36:43.060Z",
+      "updatedAt": "2026-05-03T01:36:43.060Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f6a6bccd30e1e82bf3b6ef",
+      "numero_documento": "DIV. 4 S. I PERS. Nº 9999999999",
+      "descripcion": "NI IDEA",
+      "elemento": "MATRIZ",
+      "seccion": "S. IV LOG. RI 6",
+      "instructor": "SBTTE CHACON",
+      "fecha_recepcion": "2026-05-02",
+      "fecha_limite": "2026-05-07",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": "",
+      "createdAt": "2026-05-03T01:37:00.398Z",
+      "updatedAt": "2026-05-03T01:37:00.398Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f6a96db81dcff9c6113a26",
+      "numero_documento": "DPTO VI. Nº 555555",
+      "descripcion": "TRASPORTES LLANTAS",
+      "elemento": "INFORME, MATRIZ, RR.NN.",
+      "seccion": "S. V AC/OC. RI 6",
+      "instructor": "SBTTE CHACON",
+      "fecha_recepcion": "2026-04-28",
+      "fecha_limite": "2026-05-04",
+      "estado": "Cumplido",
+      "oficio_respuesta": "0003",
+      "fecha_respuesta": "2026-05-02",
+      "createdAt": "2026-05-03T01:48:29.417Z",
+      "updatedAt": "2026-05-03T02:04:05.123Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f6a985b81dcff9c6113a27",
+      "numero_documento": "DPTO VII. Nº 8888888",
+      "descripcion": "NI IDEA",
+      "elemento": "INFORME, RR.NN. FIRMADA, RR.NN.",
+      "seccion": "S. V RR.PP. RI 6",
+      "instructor": "TTE QUISPE",
+      "fecha_recepcion": "2026-05-02",
+      "fecha_limite": "2026-05-04",
+      "estado": "Pendiente",
+      "oficio_respuesta": "",
+      "fecha_respuesta": "",
+      "createdAt": "2026-05-03T01:48:53.574Z",
+      "updatedAt": "2026-05-03T03:00:20.927Z",
+      "__v": 0
+    }
+  ],
+  "usuarios": [
+    {
+      "_id": "69f6c44544562f808c501d56",
+      "usuario": "admin",
+      "password": "$2b$10$CuDXjZxM2qWAACbs30/jgOVF4PzeHSLJVoxCS9gGTrlSOwMZ1k.5u",
+      "rol": "ADMIN",
+      "rango": "CAPITAN",
+      "createdAt": "2026-05-03T03:43:01.760Z",
+      "updatedAt": "2026-05-03T03:43:01.760Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c59244562f808c501d58",
+      "usuario": "parado",
+      "password": "$2b$10$dBssKgVL2uvrflP78RCJ2OP4Uq2K.MZSbL05QCbTid5t1MpPYmcJK",
+      "rol": "ADMIN",
+      "rango": "SUB OFICIAL",
+      "createdAt": "2026-05-03T03:48:34.279Z",
+      "updatedAt": "2026-05-03T03:48:34.279Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c5a844562f808c501d5a",
+      "usuario": "belckam",
+      "password": "$2b$10$iNONgoZhn/FCBf8deT7Jju7fzG665ufmtu3Nl05mC69YxitHy6iUO",
+      "rol": "LECTURA",
+      "rango": "SOLDADO ESTAFETA",
+      "createdAt": "2026-05-03T03:48:56.718Z",
+      "updatedAt": "2026-05-03T03:48:56.718Z",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c5b844562f808c501d5c",
+      "usuario": "pardo",
+      "password": "$2b$10$FGoeG6nHVq6uuZ/0kBDCsufSUoSSWu4LAJ0nIwA2wdr8P46IiOqaC",
+      "rol": "EDITOR",
+      "rango": "MAYOR",
+      "createdAt": "2026-05-03T03:49:12.495Z",
+      "updatedAt": "2026-05-03T03:49:12.495Z",
+      "__v": 0
+    }
+  ],
+  "logs": [
+    {
+      "_id": "69f6b8d4809797b88d4ae559",
+      "usuario": "parado",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 10:54:12 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6b8eb809797b88d4ae55b",
+      "usuario": "parado",
+      "accion": "CREÓ DOCUMENTO",
+      "documento": "DPTO I. Nº 434/26",
+      "fecha": "2/5/2026, 10:54:35 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6b913809797b88d4ae55c",
+      "usuario": "parado",
+      "accion": "EDITÓ DOCUMENTO",
+      "documento": "DPTO I. Nº 434/26",
+      "fecha": "2/5/2026, 10:55:15 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6b91a809797b88d4ae55d",
+      "usuario": "parado",
+      "accion": "ELIMINÓ DOCUMENTO",
+      "documento": "DPTO I. Nº 434/26",
+      "fecha": "2/5/2026, 10:55:22 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6ba304120947cbce6de7f",
+      "usuario": "parado",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:00:00 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6ba454120947cbce6de81",
+      "usuario": "parado",
+      "accion": "EDITÓ DOCUMENTO",
+      "documento": "DPTO VII. Nº 8888888",
+      "fecha": "2/5/2026, 11:00:21 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bb359574d20018efcebc",
+      "usuario": "parado",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:04:21 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bc799574d20018efcebd",
+      "usuario": "parado",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:09:45 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bd239574d20018efcebf",
+      "usuario": "parado",
+      "accion": "CREÓ DOCUMENTO",
+      "documento": "DPTO VII. Nº 2222222222222222",
+      "fecha": "2/5/2026, 11:12:35 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bd2f9574d20018efcec1",
+      "usuario": "parado",
+      "accion": "EDITÓ DOCUMENTO",
+      "documento": "DPTO VII. Nº 2222222222222222",
+      "fecha": "2/5/2026, 11:12:47 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bdd36c70de618c2b81de",
+      "usuario": "parado",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:15:31 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bde26c70de618c2b81e0",
+      "usuario": "parado",
+      "accion": "EDITÓ DOCUMENTO",
+      "documento": "DPTO VII. Nº 2222222222222222",
+      "fecha": "2/5/2026, 11:15:46 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bde96c70de618c2b81e2",
+      "usuario": "parado",
+      "accion": "ELIMINÓ DOCUMENTO",
+      "documento": "DPTO VII. Nº 2222222222222222",
+      "fecha": "2/5/2026, 11:15:53 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c46a44562f808c501d57",
+      "usuario": "admin",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:43:38 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c59244562f808c501d59",
+      "usuario": "admin",
+      "accion": "CREÓ USUARIO",
+      "documento": "parado",
+      "fecha": "2/5/2026, 11:48:34 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c5a844562f808c501d5b",
+      "usuario": "admin",
+      "accion": "CREÓ USUARIO",
+      "documento": "belckam",
+      "fecha": "2/5/2026, 11:48:56 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c5b844562f808c501d5d",
+      "usuario": "admin",
+      "accion": "CREÓ USUARIO",
+      "documento": "pardo",
+      "fecha": "2/5/2026, 11:49:12 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c5c644562f808c501d5e",
+      "usuario": "parado",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:49:26 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c5dc44562f808c501d5f",
+      "usuario": "belckam",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:49:48 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c5ee44562f808c501d60",
+      "usuario": "pardo",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:50:06 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6c60144562f808c501d61",
+      "usuario": "parado",
+      "accion": "INICIÓ SESIÓN",
+      "documento": "",
+      "fecha": "2/5/2026, 11:50:25 p. m.",
+      "__v": 0
+    }
+  ],
+  "historial": [
+    {
+      "_id": "69f6ba454120947cbce6de80",
+      "usuario": "parado",
+      "documento": "DPTO VII. Nº 8888888",
+      "antes": {
+        "_id": "69f6a985b81dcff9c6113a27",
+        "numero_documento": "DPTO VII. Nº 8888888",
+        "descripcion": "NI IDEA",
+        "elemento": "INFORME, RR.NN. FIRMADA, RR.NN.",
+        "seccion": "S. V RR.PP. RI 6",
+        "instructor": "TTE QUISPE",
+        "fecha_recepcion": "2026-05-02",
+        "fecha_limite": "2026-05-04",
+        "estado": "Cumplido",
+        "oficio_respuesta": "00000001",
+        "fecha_respuesta": "2026-05-02",
+        "createdAt": "2026-05-03T01:48:53.574Z",
+        "updatedAt": "2026-05-03T01:48:53.574Z",
+        "__v": 0
+      },
+      "despues": {
+        "_id": "69f6a985b81dcff9c6113a27",
+        "numero_documento": "DPTO VII. Nº 8888888",
+        "descripcion": "NI IDEA",
+        "elemento": "INFORME, RR.NN. FIRMADA, RR.NN.",
+        "seccion": "S. V RR.PP. RI 6",
+        "instructor": "TTE QUISPE",
+        "fecha_recepcion": "2026-05-02",
+        "fecha_limite": "2026-05-04",
+        "estado": "Pendiente",
+        "oficio_respuesta": "",
+        "fecha_respuesta": "",
+        "createdAt": "2026-05-03T01:48:53.574Z",
+        "updatedAt": "2026-05-03T03:00:20.927Z",
+        "__v": 0
+      },
+      "fecha": "2/5/2026, 11:00:21 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bd2f9574d20018efcec0",
+      "usuario": "parado",
+      "documento": "DPTO VII. Nº 2222222222222222",
+      "antes": {
+        "_id": "69f6bd229574d20018efcebe",
+        "numero_documento": "DPTO VII. Nº 2222222222222222",
+        "descripcion": "ASCENSO A DRAGONEANTES Y CABOS DEL 1ER ELON CAT/26",
+        "elemento": "FOTOGRAMA, MATRIZ",
+        "seccion": "S. V RR.PP. RI 6",
+        "instructor": "MY NAVARRO",
+        "fecha_recepcion": "2026-05-02",
+        "fecha_limite": "2026-05-05",
+        "estado": "Pendiente",
+        "oficio_respuesta": "",
+        "fecha_respuesta": "",
+        "createdAt": "2026-05-03T03:12:34.841Z",
+        "updatedAt": "2026-05-03T03:12:34.841Z",
+        "__v": 0
+      },
+      "despues": {
+        "_id": "69f6bd229574d20018efcebe",
+        "numero_documento": "DPTO VII. Nº 2222222222222222",
+        "descripcion": "ASCENSO A DRAGONEANTES Y CABOS DEL 1ER ELON CAT/26",
+        "elemento": "FOTOGRAMA, MATRIZ",
+        "seccion": "S. V RR.PP. RI 6",
+        "instructor": "MY NAVARRO",
+        "fecha_recepcion": "2026-05-02",
+        "fecha_limite": "2026-05-05",
+        "estado": "Cumplido",
+        "oficio_respuesta": "0003",
+        "fecha_respuesta": "2026-05-02",
+        "createdAt": "2026-05-03T03:12:34.841Z",
+        "updatedAt": "2026-05-03T03:12:47.668Z",
+        "__v": 0
+      },
+      "fecha": "2/5/2026, 11:12:47 p. m.",
+      "__v": 0
+    },
+    {
+      "_id": "69f6bde26c70de618c2b81df",
+      "usuario": "parado",
+      "documento": "DPTO VII. Nº 2222222222222222",
+      "antes": {
+        "_id": "69f6bd229574d20018efcebe",
+        "numero_documento": "DPTO VII. Nº 2222222222222222",
+        "descripcion": "ASCENSO A DRAGONEANTES Y CABOS DEL 1ER ELON CAT/26",
+        "elemento": "FOTOGRAMA, MATRIZ",
+        "seccion": "S. V RR.PP. RI 6",
+        "instructor": "MY NAVARRO",
+        "fecha_recepcion": "2026-05-02",
+        "fecha_limite": "2026-05-05",
+        "estado": "Cumplido",
+        "oficio_respuesta": "0003",
+        "fecha_respuesta": "2026-05-02",
+        "createdAt": "2026-05-03T03:12:34.841Z",
+        "updatedAt": "2026-05-03T03:12:47.668Z",
+        "__v": 0
+      },
+      "despues": {
+        "_id": "69f6bd229574d20018efcebe",
+        "numero_documento": "DPTO VII. Nº 2222222222222222",
+        "descripcion": "ASCENSO A DRAGONEANTES Y CABOS DEL 1ER ELON CAT/26",
+        "elemento": "FOTOGRAMA, MATRIZ",
+        "seccion": "S. V RR.PP. RI 6",
+        "instructor": "MY NAVARRO",
+        "fecha_recepcion": "2026-05-02",
+        "fecha_limite": "2026-05-05",
+        "estado": "Pendiente",
+        "oficio_respuesta": "",
+        "fecha_respuesta": "",
+        "createdAt": "2026-05-03T03:12:34.841Z",
+        "updatedAt": "2026-05-03T03:15:46.443Z",
+        "__v": 0
+      },
+      "fecha": "2/5/2026, 11:15:46 p. m.",
+      "__v": 0
+    }
+  ],
+  "fecha": "2026-05-03T03:57:45.724Z"
+}
