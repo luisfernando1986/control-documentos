@@ -36,15 +36,15 @@ h1 {
 h3 {
     text-align: center;
     color: #1a2a44;
-    margin: 8px 0 4px 0;
-    font-size: 14px;
+    margin: 4px 0 2px 0;  /* 👈 MÁS COMPACTO */
+    font-size: 13px;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 /* ================== FORMULARIO ================== */
 form {
     display: grid;
-    gap: 10px;
+    gap: 6px;
     margin: 0 auto 20px auto;
     max-width: 600px;
 
@@ -54,7 +54,10 @@ form {
     background: rgba(255,255,255,0.85);
     position: relative;
 }
-
+label {
+    margin: 2px 0;
+    font-size: 13px;
+}
 /* 🔥 ESCUDO SOLO EN PC */
 form::after {
     content: "";
@@ -167,7 +170,7 @@ td {
 .secciones-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
+    gap: 3px;
 }
 
 /* ================== EXPORTAR ================== */
