@@ -198,15 +198,13 @@ function mostrarDocumentos(docs) {
 
                     ${
                             rolUsuario === 'ADMIN'
-
                             ?
-
                             `
-                            <button onclick="editarDocumento('${doc._id}')">
+                            <button class="btn-editar" onclick="editarDocumento('${doc._id}')">
                                 Editar
                             </button>
-
-                            <button onclick="eliminarDocumento('${doc._id}')">
+                            
+                            <button class="btn-eliminar" onclick="eliminarDocumento('${doc._id}')">
                                 Eliminar
                             </button>
                             `
@@ -214,11 +212,9 @@ function mostrarDocumentos(docs) {
                             :
 
                             rolUsuario === 'EDITOR'
-
                             ?
-
                             `
-                            <button onclick="editarDocumento('${doc._id}')">
+                            <button class="btn-editar" onclick="editarDocumento('${doc._id}')">
                                 Editar
                             </button>
                             `
