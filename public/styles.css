@@ -299,3 +299,24 @@ button[onclick="exportarExcel()"] {
     font-size: 12px;
     border-radius: 4px;
 }
+
+
+
+/* 🔥 FORZAR ESTILO BOTONES EN TABLA */
+td .btn-editar,
+td .btn-eliminar {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    display: inline-block;
+}
+
+td .btn-editar {
+    background-color: #007bff !important;
+}
+
+td .btn-eliminar {
+    background-color: #dc3545 !important;
+}
