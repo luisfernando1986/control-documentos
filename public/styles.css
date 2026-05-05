@@ -271,3 +271,31 @@ button[onclick="exportarExcel()"] {
         font-size: 12px;
     }
 }
+
+/* ================= BOTONES EDITAR / ELIMINAR ================= */
+
+.btn-editar {
+    background-color: #007bff; /* azul */
+    color: white;
+    margin-right: 5px;  /* 👈 separación */
+}
+
+.btn-eliminar {
+    background-color: #dc3545; /* rojo */
+    color: white;
+}
+
+/* HOVER (efecto al pasar el mouse) */
+.btn-editar:hover {
+    background-color: #0056b3;
+}
+
+.btn-eliminar:hover {
+    background-color: #a71d2a;
+}
+.btn-editar,
+.btn-eliminar {
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+}
