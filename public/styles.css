@@ -73,7 +73,7 @@ form::after {
     background-repeat: no-repeat;
     background-position: center;
 
-    opacity: 0.1;
+    opacity: 0.60;
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
