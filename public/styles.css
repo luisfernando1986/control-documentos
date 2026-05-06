@@ -10,7 +10,7 @@ body {
     padding: 10px;
 
     background-image: url('FONDO.jpg');
-    background-size: 100% 100%;
+    background-size: 100% 150%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -65,8 +65,8 @@ form::after {
     top: 50%;
     left: 50%;
 
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 
     background-image: url('RI6DRCAMPOS.jpeg');
     background-size: contain;
