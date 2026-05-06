@@ -10,7 +10,7 @@ body {
     padding: 10px;
 
     background-image: url('FONDO.jpg');
-    background-size: 100% 150%;
+    background-size: 100% 120%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -319,4 +319,10 @@ td .btn-editar {
 
 td .btn-eliminar {
     background-color: #dc3545 !important;
+}
+
+
+.elementos-box label,
+.secciones-box label {
+    font-weight: 700; /* más fuerte que bold */
 }
