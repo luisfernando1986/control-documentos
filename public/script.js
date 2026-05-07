@@ -696,13 +696,12 @@ async function editarDocumento(id) {
 
         const partes = doc.numero_documento.split(' ');
 
-                numero.value =
-                    partes[partes.length - 1]
-                        .split('/')[0];
-        
-                const tipoCompleto =
-            doc.numero_documento
-                .replace(numero.value, '')
+            const ultimoParte = partes[partes.length - 1];
+            
+            numero.value = ultimoParte.split('/')[0];
+            
+            const tipoCompleto = doc.numero_documento
+                .replace(ultimoParte, '')
                 .trim();
         
         const opciones = Array.from(
