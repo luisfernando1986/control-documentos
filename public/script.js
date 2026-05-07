@@ -502,12 +502,15 @@ formulario.addEventListener('submit', async (e) => {
 
     e.preventDefault();
 
-    let nuevoEstado = estado.value;
+    let nuevoEstado = 'Pendiente';
 
-    if(oficio_respuesta.value.trim() !== '') {
-
-        nuevoEstado = 'Cumplido';
-    }
+        if(
+            oficio_respuesta.value.trim() !== '' &&
+            fecha_respuesta.value !== ''
+        ) {
+        
+            nuevoEstado = 'Cumplido';
+        }
 
     const documento = {
 
