@@ -397,8 +397,12 @@ function obtenerElementos() {
 
     checks.forEach(check => {
 
-        if(check.checked && check.value) {
-
+        if(
+            check.checked &&
+            check.value &&
+            check.value !== 'on'
+        ) {
+        
             elementos.push(check.value);
         }
     });
