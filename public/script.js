@@ -432,10 +432,15 @@ function obtenerSecciones() {
     // OTROS
     const otros = document.getElementById('otros_seccion');
 
-    if (otros && otros.value.trim() !== '') {
-        secciones.push(otros.value.toUpperCase());
+    if (
+        document.getElementById('check_otros').checked &&
+        otros &&
+        otros.value.trim() !== ''
+    ) {
+        secciones.push(
+            otros.value.trim().toUpperCase()
+        );
     }
-
     return secciones.join(', ');
 }
 // ================== GUARDAR ==================
@@ -457,8 +462,8 @@ formulario.addEventListener('submit', async (e) => {
 
             (
                 tipo_documento.value === 'OTROS'
-                    ? otro_tipo.value
-                    : tipo_documento.value
+                ? otro_tipo.value.trim().toUpperCase()
+                : tipo_documento.value
             )
 
             + ' ' +
