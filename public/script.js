@@ -55,7 +55,14 @@ oficio_respuesta.addEventListener('blur', () => {
     if(valor !== '' && !valor.includes('/')) {
 
         const anio = new Date()
-            .getFullYear
+            .getFullYear()
+            .toString()
+            .slice(-2);
+
+        oficio_respuesta.value =
+            valor + '/' + anio;
+    }
+});
 
 const fecha_respuesta = document.getElementById('fecha_respuesta');
 
