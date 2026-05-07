@@ -48,6 +48,15 @@ const estado = document.getElementById('estado');
 
 const oficio_respuesta = document.getElementById('oficio_respuesta');
 
+oficio_respuesta.addEventListener('blur', () => {
+
+    let valor = oficio_respuesta.value.trim();
+
+    if(valor !== '' && !valor.includes('/')) {
+
+        const anio = new Date()
+            .getFullYear
+
 const fecha_respuesta = document.getElementById('fecha_respuesta');
 
 let editandoId = null;
@@ -208,9 +217,9 @@ function mostrarDocumentos(docs) {
                 
                 <td>${formatearFecha(doc.fecha_limite)}</td>
                 
+                <td>${doc.oficio_respuesta || ''}</td>
+                
                 <td>${formatearFecha(doc.fecha_respuesta)}</td>
-
-                <td>${doc.fecha_respuesta || ''}</td>
 
                 <td>${doc.estado}</td>
 
