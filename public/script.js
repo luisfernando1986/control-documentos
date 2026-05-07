@@ -423,10 +423,11 @@ function obtenerSecciones() {
     document.querySelectorAll(
         '.secciones-box input[type="checkbox"]'
     ).forEach(cb => {
-
+    
         if (
             cb.checked &&
-            cb.id !== 'check_otros'
+            cb.id !== 'check_otros' &&
+            cb.value
         ) {
 
             secciones.push(
