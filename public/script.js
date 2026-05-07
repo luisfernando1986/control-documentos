@@ -182,17 +182,15 @@ function mostrarDocumentos(docs) {
 
     docs.forEach(doc => {
 
-       const hoy = new Date();
-                hoy.setHours(0,0,0,0);
-                
-                documentosGlobal.forEach(doc => {
-                
-                    const limite = new Date(doc.fecha_limite);
-                    limite.setHours(0,0,0,0);
-                
-                    const diferencia = Math.ceil(
-                        (limite - hoy) / (1000 * 60 * 60 * 24)
-                    );
+        const hoy = new Date();
+        hoy.setHours(0,0,0,0);
+
+        const limite = new Date(doc.fecha_limite);
+        limite.setHours(0,0,0,0);
+
+        const diferencia = Math.ceil(
+            (limite - hoy) / (1000 * 60 * 60 * 24)
+        );
 
         let clase = '';
 
@@ -202,10 +200,12 @@ function mostrarDocumentos(docs) {
 
         } else if(diferencia < 0) {
 
+            // SOLO SI YA PASÓ LA FECHA
             clase = 'vencido';
 
         } else if(diferencia >= 0 && diferencia <= 1) {
 
+            // HOY O MAÑANA
             clase = 'urgente';
         }
 
@@ -225,11 +225,11 @@ function mostrarDocumentos(docs) {
                 <td>${doc.instructor}</td>
 
                 <td>${formatearFecha(doc.fecha_recepcion)}</td>
-                
+
                 <td>${formatearFecha(doc.fecha_limite)}</td>
-                
+
                 <td>${doc.oficio_respuesta || ''}</td>
-                
+
                 <td>${formatearFecha(doc.fecha_respuesta)}</td>
 
                 <td>${doc.estado}</td>
@@ -237,32 +237,28 @@ function mostrarDocumentos(docs) {
                 <td>
 
                     ${
-                            rolUsuario === 'ADMIN'
-                            ?
-                            `
-                            <button class="btn-editar" onclick="editarDocumento('${doc._id}')">
-                                Editar
-                            </button>
-                            
-                            <button class="btn-eliminar" onclick="eliminarDocumento('${doc._id}')">
-                                Eliminar
-                            </button>
-                            `
+                        rolUsuario === 'ADMIN'
+                        ?
+                        `
+                        <button class="btn-editar" onclick="editarDocumento('${doc._id}')">
+                            Editar
+                        </button>
 
-                            :
-
-                            rolUsuario === 'EDITOR'
-                            ?
-                            `
-                            <button class="btn-editar" onclick="editarDocumento('${doc._id}')">
-                                Editar
-                            </button>
-                            `
-
-                            :
-
-                            `<span style="color:gray;">SOLO LECTURA</span>`
-                        }
+                        <button class="btn-eliminar" onclick="eliminarDocumento('${doc._id}')">
+                            Eliminar
+                        </button>
+                        `
+                        :
+                        rolUsuario === 'EDITOR'
+                        ?
+                        `
+                        <button class="btn-editar" onclick="editarDocumento('${doc._id}')">
+                            Editar
+                        </button>
+                        `
+                        :
+                        `<span style="color:gray;">SOLO LECTURA</span>`
+                    }
 
                 </td>
 
