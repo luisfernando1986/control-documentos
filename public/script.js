@@ -52,6 +52,26 @@ const fecha_respuesta = document.getElementById('fecha_respuesta');
 
 let editandoId = null;
 
+
+function formatearFecha(fecha) {
+
+    if(!fecha) return '';
+
+    const meses = [
+        'ENE', 'FEB', 'MAR',
+        'ABR', 'MAY', 'JUN',
+        'JUL', 'AGO', 'SEP',
+        'OCT', 'NOV', 'DIC'
+    ];
+
+    const partes = fecha.split('-');
+
+    const anio = partes[0];
+    const mes = meses[parseInt(partes[1]) - 1];
+    const dia = partes[2];
+
+    return `${dia}-${mes}-${anio}`;
+}
 // ================== BLOQUEO POR ROL ==================
 
 // 🔥 IMPORTANTE:
@@ -184,11 +204,11 @@ function mostrarDocumentos(docs) {
 
                 <td>${doc.instructor}</td>
 
-                <td>${doc.fecha_recepcion}</td>
-
-                <td>${doc.fecha_limite}</td>
-
-                <td>${doc.oficio_respuesta || ''}</td>
+                <td>${formatearFecha(doc.fecha_recepcion)}</td>
+                
+                <td>${formatearFecha(doc.fecha_limite)}</td>
+                
+                <td>${formatearFecha(doc.fecha_respuesta)}</td>
 
                 <td>${doc.fecha_respuesta || ''}</td>
 
