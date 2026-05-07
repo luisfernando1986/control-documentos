@@ -424,23 +424,33 @@ function obtenerSecciones() {
         '.secciones-box input[type="checkbox"]'
     ).forEach(cb => {
 
-        if (cb.checked && cb.id !== 'check_otros') {
-            secciones.push(cb.value.toUpperCase());
+        if (
+            cb.checked &&
+            cb.id !== 'check_otros'
+        ) {
+
+            secciones.push(
+                cb.value.toUpperCase()
+            );
         }
     });
 
     // OTROS
-    const otros = document.getElementById('otros_seccion');
+    const otros = document.getElementById(
+        'otros_seccion'
+    );
 
     if (
         document.getElementById('check_otros').checked &&
         otros &&
         otros.value.trim() !== ''
     ) {
+
         secciones.push(
             otros.value.trim().toUpperCase()
         );
     }
+
     return secciones.join(', ');
 }
 // ================== GUARDAR ==================
@@ -456,19 +466,17 @@ formulario.addEventListener('submit', async (e) => {
         nuevoEstado = 'Cumplido';
     }
 
-    const documento = {
+    numero_documento:
 
-        numero_documento:
-
-            (
-                tipo_documento.value === 'OTROS'
-                ? otro_tipo.value.trim().toUpperCase()
-                : tipo_documento.value
+    (
+        tipo_documento.value === 'OTROS'
+                    ? otro_tipo.value.trim().toUpperCase()
+                    : tipo_documento.value
             )
-
+        
             + ' ' +
-
-            numero.value,
+        
+            numero.value.trim().toUpperCase(),
 
         descripcion: descripcion.value,
 
@@ -534,14 +542,16 @@ formulario.addEventListener('submit', async (e) => {
         alert('Documento guardado');
 
         formulario.reset();
-
-        editandoId = null;
-
-        otro_elemento.style.display = 'none';
-
-        otro_tipo.style.display = 'none';
-
-        cargarDocumentos();
+            
+            editandoId = null;
+            
+            otro_elemento.style.display = 'none';
+            
+            otro_tipo.style.display = 'none';
+            
+            document.getElementById('otros_seccion').style.display = 'none';
+            
+            cargarDocumentos();
 
     } catch(error) {
 
@@ -621,12 +631,29 @@ async function editarDocumento(id) {
 
         const partes = doc.numero_documento.split(' ');
 
-        numero.value = partes[partes.length - 1];
-
-        tipo_documento.value =
+                numero.value = partes[partes.length - 1];
+        
+                const tipoCompleto =
             doc.numero_documento
                 .replace(numero.value, '')
                 .trim();
+        
+        const opciones = Array.from(
+            tipo_documento.options
+        ).map(o => o.value);
+        
+        if(opciones.includes(tipoCompleto)) {
+        
+            tipo_documento.value = tipoCompleto;
+        
+        } else {
+        
+            tipo_documento.value = 'OTROS';
+        
+            otro_tipo.style.display = 'block';
+        
+            otro_tipo.value = tipoCompleto;
+        }
 
         // ================= LIMPIAR CHECKBOX =================
 
