@@ -182,32 +182,43 @@ function mostrarDocumentos(docs) {
 
     docs.forEach(doc => {
 
-        const hoy = new Date();
-        hoy.setHours(0,0,0,0);
-
-        const limite = new Date(doc.fecha_limite);
-        limite.setHours(0,0,0,0);
-
-        const diferencia = Math.floor(
-            (limite - hoy) / (1000 * 60 * 60 * 24)
-        );
+        // ===== FECHA HOY =====
+            const hoy = new Date();
+            
+            const hoySoloFecha = new Date(
+                hoy.getFullYear(),
+                hoy.getMonth(),
+                hoy.getDate()
+            );
+            
+            // ===== FECHA LIMITE =====
+            const partesFecha = doc.fecha_limite.split('-');
+            
+            const limite = new Date(
+                parseInt(partesFecha[0]), // año
+                parseInt(partesFecha[1]) - 1, // mes
+                parseInt(partesFecha[2]) // día
+            );
+            
+            // ===== DIFERENCIA =====
+            const diferencia = Math.ceil(
+                (limite - hoySoloFecha) / (1000 * 60 * 60 * 24)
+            );
 
         let clase = '';
 
-        if(doc.estado === 'Cumplido') {
-
-            clase = 'cumplido';
-
-        } else if(diferencia < 0) {
-
-            // SOLO SI YA PASÓ EL DÍA
-            clase = 'vencido';
-
-        } else if(diferencia <= 1) {
-
-            // HOY O MAÑANA
-            clase = 'urgente';
-        }
+            if(doc.estado === 'Cumplido') {
+            
+                clase = 'cumplido';
+            
+            } else if(diferencia < 0) {
+            
+                clase = 'vencido';
+            
+            } else if(diferencia <= 1) {
+            
+                clase = 'urgente';
+            }
 
         tabla.innerHTML += `
             <tr class="${clase}">
@@ -328,12 +339,17 @@ function aplicarFiltros() {
 
             filtrados = filtrados.filter(doc => {
 
-                const limite = new Date(doc.fecha_limite);
-                limite.setHours(0,0,0,0);
+                const partesFecha = doc.fecha_limite.split('-');
 
-                const diferencia = Math.floor(
-                    (limite - hoy) / (1000 * 60 * 60 * 24)
-                );
+                    const limite = new Date(
+                        parseInt(partesFecha[0]),
+                        parseInt(partesFecha[1]) - 1,
+                        parseInt(partesFecha[2])
+                    );
+                    
+                    const diferencia = Math.ceil(
+                        (limite - hoy) / (1000 * 60 * 60 * 24)
+                    );
 
                 return (
                     doc.estado !== 'Cumplido'
@@ -363,17 +379,25 @@ function actualizarPanelComando() {
     let urgentes = 0;
     let cumplidos = 0;
 
-    const hoy = new Date();
-    hoy.setHours(0,0,0,0);
+       const hoy = new Date();
 
-    documentosGlobal.forEach(doc => {
-
-        const limite = new Date(doc.fecha_limite);
-        limite.setHours(0,0,0,0);
-
-        const diferencia = Math.floor(
-            (limite - hoy) / (1000 * 60 * 60 * 24)
-        );
+            const hoySoloFecha = new Date(
+                hoy.getFullYear(),
+                hoy.getMonth(),
+                hoy.getDate()
+            );
+            
+            const partesFecha = doc.fecha_limite.split('-');
+            
+            const limite = new Date(
+                parseInt(partesFecha[0]),
+                parseInt(partesFecha[1]) - 1,
+                parseInt(partesFecha[2])
+            );
+            
+            const diferencia = Math.ceil(
+                (limite - hoySoloFecha) / (1000 * 60 * 60 * 24)
+            );
 
         if(doc.estado === 'Cumplido') {
 
