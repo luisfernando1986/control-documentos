@@ -468,56 +468,58 @@ formulario.addEventListener('submit', async (e) => {
 
     const documento = {
 
-            numero_documento:
-        
-                (
-                    tipo_documento.value === 'OTROS'
-                        ? otro_tipo.value.trim().toUpperCase()
-                        : tipo_documento.value
-                )
-        
-                + ' ' +
-        
-                numero.value.trim().toUpperCase(),
-        
-            descripcion: descripcion.value,
-        
-            elemento:
-        
-                obtenerElementos()
-        
-                ||
-        
-                (
-                    documentosGlobal.find(d =>
-                        d._id == editandoId
-                    )?.elemento
-                ),
-        
-            seccion:
-        
-                obtenerSecciones()
-        
-                ||
-        
-                (
-                    documentosGlobal.find(d =>
-                        d._id == editandoId
-                    )?.seccion
-                ),
-        
-            instructor: instructor.value,
-        
-            fecha_recepcion: fecha_recepcion.value,
-        
-            fecha_limite: fecha_limite.value,
-        
-            estado: nuevoEstado,
-        
-            oficio_respuesta: oficio_respuesta.value,
-        
-            fecha_respuesta: fecha_respuesta.value
-        };
+        const documento = {
+
+    numero_documento:
+
+        (
+            tipo_documento.value === 'OTROS'
+                ? otro_tipo.value.trim().toUpperCase()
+                : tipo_documento.value
+        )
+
+        + ' ' +
+
+        numero.value.trim().toUpperCase(),
+
+    descripcion: descripcion.value,
+
+    elemento:
+
+        obtenerElementos()
+
+        ||
+
+        (
+            documentosGlobal.find(d =>
+                d._id == editandoId
+            )?.elemento
+        ),
+
+    seccion:
+
+        obtenerSecciones()
+
+        ||
+
+        (
+            documentosGlobal.find(d =>
+                d._id == editandoId
+            )?.seccion
+        ),
+
+    instructor: instructor.value,
+
+    fecha_recepcion: fecha_recepcion.value,
+
+    fecha_limite: fecha_limite.value,
+
+    estado: nuevoEstado,
+
+    oficio_respuesta: oficio_respuesta.value,
+
+    fecha_respuesta: fecha_respuesta.value
+};
 
     try {
 
