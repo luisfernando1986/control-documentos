@@ -455,6 +455,8 @@ function obtenerSecciones() {
 }
 // ================== GUARDAR ==================
 
+// ================== GUARDAR ==================
+
 formulario.addEventListener('submit', async (e) => {
 
     e.preventDefault();
@@ -468,58 +470,56 @@ formulario.addEventListener('submit', async (e) => {
 
     const documento = {
 
-        const documento = {
+        numero_documento:
 
-    numero_documento:
+            (
+                tipo_documento.value === 'OTROS'
+                    ? otro_tipo.value.trim().toUpperCase()
+                    : tipo_documento.value
+            )
 
-        (
-            tipo_documento.value === 'OTROS'
-                ? otro_tipo.value.trim().toUpperCase()
-                : tipo_documento.value
-        )
+            + ' ' +
 
-        + ' ' +
+            numero.value.trim().toUpperCase(),
 
-        numero.value.trim().toUpperCase(),
+        descripcion: descripcion.value,
 
-    descripcion: descripcion.value,
+        elemento:
 
-    elemento:
+            obtenerElementos()
 
-        obtenerElementos()
+            ||
 
-        ||
+            (
+                documentosGlobal.find(d =>
+                    d._id == editandoId
+                )?.elemento
+            ),
 
-        (
-            documentosGlobal.find(d =>
-                d._id == editandoId
-            )?.elemento
-        ),
+        seccion:
 
-    seccion:
+            obtenerSecciones()
 
-        obtenerSecciones()
+            ||
 
-        ||
+            (
+                documentosGlobal.find(d =>
+                    d._id == editandoId
+                )?.seccion
+            ),
 
-        (
-            documentosGlobal.find(d =>
-                d._id == editandoId
-            )?.seccion
-        ),
+        instructor: instructor.value,
 
-    instructor: instructor.value,
+        fecha_recepcion: fecha_recepcion.value,
 
-    fecha_recepcion: fecha_recepcion.value,
+        fecha_limite: fecha_limite.value,
 
-    fecha_limite: fecha_limite.value,
+        estado: nuevoEstado,
 
-    estado: nuevoEstado,
+        oficio_respuesta: oficio_respuesta.value,
 
-    oficio_respuesta: oficio_respuesta.value,
-
-    fecha_respuesta: fecha_respuesta.value
-};
+        fecha_respuesta: fecha_respuesta.value
+    };
 
     try {
 
@@ -546,16 +546,16 @@ formulario.addEventListener('submit', async (e) => {
         alert('Documento guardado');
 
         formulario.reset();
-            
-            editandoId = null;
-            
-            otro_elemento.style.display = 'none';
-            
-            otro_tipo.style.display = 'none';
-            
-            document.getElementById('otros_seccion').style.display = 'none';
-            
-            cargarDocumentos();
+
+        editandoId = null;
+
+        otro_elemento.style.display = 'none';
+
+        otro_tipo.style.display = 'none';
+
+        document.getElementById('otros_seccion').style.display = 'none';
+
+        cargarDocumentos();
 
     } catch(error) {
 
