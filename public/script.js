@@ -183,14 +183,16 @@ function mostrarDocumentos(docs) {
     docs.forEach(doc => {
 
        const hoy = new Date();
-            hoy.setHours(0,0,0,0);
-            
-            const limite = new Date(doc.fecha_limite);
-            limite.setHours(0,0,0,0);
-            
-            const diferencia = Math.ceil(
-                (limite - hoy) / (1000 * 60 * 60 * 24)
-            );
+                hoy.setHours(0,0,0,0);
+                
+                documentosGlobal.forEach(doc => {
+                
+                    const limite = new Date(doc.fecha_limite);
+                    limite.setHours(0,0,0,0);
+                
+                    const diferencia = Math.ceil(
+                        (limite - hoy) / (1000 * 60 * 60 * 24)
+                    );
 
         let clase = '';
 
