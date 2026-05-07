@@ -176,49 +176,55 @@ async function cargarDocumentos() {
 
 // ================== MOSTRAR DOCUMENTOS ==================
 
+// ================== MOSTRAR DOCUMENTOS ==================
+
 function mostrarDocumentos(docs) {
 
     tabla.innerHTML = '';
 
     docs.forEach(doc => {
 
-        // ===== FECHA HOY =====
-            const hoy = new Date();
-            
-            const hoySoloFecha = new Date(
-                hoy.getFullYear(),
-                hoy.getMonth(),
-                hoy.getDate()
-            );
-            
-            // ===== FECHA LIMITE =====
-            const partesFecha = doc.fecha_limite.split('-');
-            
-            const limite = new Date(
-                parseInt(partesFecha[0]), // año
-                parseInt(partesFecha[1]) - 1, // mes
-                parseInt(partesFecha[2]) // día
-            );
-            
-            // ===== DIFERENCIA =====
-            const diferencia = Math.ceil(
-                (limite - hoySoloFecha) / (1000 * 60 * 60 * 24)
-            );
+        // ===== FECHA DE HOY =====
+        const hoy = new Date();
+
+        const hoySoloFecha = new Date(
+            hoy.getFullYear(),
+            hoy.getMonth(),
+            hoy.getDate()
+        );
+
+        // ===== FECHA LIMITE =====
+        const partesFecha = doc.fecha_limite.split('-');
+
+        const limite = new Date(
+            parseInt(partesFecha[0]),
+            parseInt(partesFecha[1]) - 1,
+            parseInt(partesFecha[2])
+        );
+
+        // ===== DIFERENCIA =====
+        const diferencia = Math.floor(
+            (limite - hoySoloFecha) / (1000 * 60 * 60 * 24)
+        );
 
         let clase = '';
 
-            if(doc.estado === 'Cumplido') {
-            
-                clase = 'cumplido';
-            
-            } else if(diferencia < 0) {
-            
-                clase = 'vencido';
-            
-            } else if(diferencia <= 1) {
-            
-                clase = 'urgente';
-            }
+        // ===== COLORES =====
+
+        if(doc.estado === 'Cumplido') {
+
+            clase = 'cumplido';
+
+        } else if(diferencia < 0) {
+
+            // ROJO SOLO SI YA PASÓ EL DÍA
+            clase = 'vencido';
+
+        } else if(diferencia <= 1) {
+
+            // ROSADO SI ES HOY O MAÑANA
+            clase = 'urgente';
+        }
 
         tabla.innerHTML += `
             <tr class="${clase}">
@@ -373,45 +379,58 @@ function aplicarFiltros() {
 
 // ================== PANEL ALERTAS ==================
 
+// ================== PANEL ALERTAS ==================
+
 function actualizarPanelComando() {
 
     let vencidos = 0;
     let urgentes = 0;
     let cumplidos = 0;
 
-       const hoy = new Date();
+    documentosGlobal.forEach(doc => {
 
-            const hoySoloFecha = new Date(
-                hoy.getFullYear(),
-                hoy.getMonth(),
-                hoy.getDate()
-            );
-            
-            const partesFecha = doc.fecha_limite.split('-');
-            
-            const limite = new Date(
-                parseInt(partesFecha[0]),
-                parseInt(partesFecha[1]) - 1,
-                parseInt(partesFecha[2])
-            );
-            
-            const diferencia = Math.ceil(
-                (limite - hoySoloFecha) / (1000 * 60 * 60 * 24)
-            );
+        // ===== FECHA DE HOY =====
+        const hoy = new Date();
 
+        const hoySoloFecha = new Date(
+            hoy.getFullYear(),
+            hoy.getMonth(),
+            hoy.getDate()
+        );
+
+        // ===== FECHA LIMITE =====
+        const partesFecha = doc.fecha_limite.split('-');
+
+        const limite = new Date(
+            parseInt(partesFecha[0]),
+            parseInt(partesFecha[1]) - 1,
+            parseInt(partesFecha[2])
+        );
+
+        // ===== DIFERENCIA =====
+        const diferencia = Math.floor(
+            (limite - hoySoloFecha) / (1000 * 60 * 60 * 24)
+        );
+
+        // ===== CONTADORES =====
         if(doc.estado === 'Cumplido') {
 
             cumplidos++;
 
         } else if(diferencia < 0) {
 
+            // SOLO SI YA PASÓ EL DÍA
             vencidos++;
 
         } else if(diferencia <= 1) {
 
+            // HOY Y MAÑANA
             urgentes++;
         }
+
     });
+
+    // ===== ACTUALIZAR PANEL =====
 
     document.getElementById('count-vencidos').textContent = vencidos;
 
@@ -422,6 +441,8 @@ function actualizarPanelComando() {
     const panel = document.querySelector('.panel-comando');
 
     const audio = document.getElementById('sonidoAlerta');
+
+    // ===== ALERTA =====
 
     if(vencidos > 0 || urgentes > 0) {
 
