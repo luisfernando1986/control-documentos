@@ -182,13 +182,15 @@ function mostrarDocumentos(docs) {
 
     docs.forEach(doc => {
 
-        const hoy = new Date();
-
-        const limite = new Date(doc.fecha_limite);
-
-        const diferencia = Math.ceil(
-            (limite - hoy) / (1000 * 60 * 60 * 24)
-        );
+       const hoy = new Date();
+            hoy.setHours(0,0,0,0);
+            
+            const limite = new Date(doc.fecha_limite);
+            limite.setHours(0,0,0,0);
+            
+            const diferencia = Math.ceil(
+                (limite - hoy) / (1000 * 60 * 60 * 24)
+            );
 
         let clase = '';
 
@@ -673,7 +675,18 @@ async function editarDocumento(id) {
 
         fecha_limite.value = doc.fecha_limite || '';
 
-        estado.value = doc.estado || 'Pendiente';
+        if(
+            doc.oficio_respuesta &&
+            doc.oficio_respuesta.trim() !== '' &&
+            doc.fecha_respuesta
+        ) {
+        
+            estado.value = 'Cumplido';
+        
+        } else {
+        
+            estado.value = 'Pendiente';
+        }
 
         oficio_respuesta.value = doc.oficio_respuesta || '';
 
@@ -683,7 +696,9 @@ async function editarDocumento(id) {
 
         const partes = doc.numero_documento.split(' ');
 
-                numero.value = partes[partes.length - 1];
+                numero.value =
+                    partes[partes.length - 1]
+                        .split('/')[0];
         
                 const tipoCompleto =
             doc.numero_documento
