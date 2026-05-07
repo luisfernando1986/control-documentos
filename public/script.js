@@ -485,7 +485,11 @@ formulario.addEventListener('submit', async (e) => {
 
             + ' ' +
 
-            numero.value.trim().toUpperCase(),
+            numero.value.trim().toUpperCase()
+            
+            + '/' +
+            
+            new Date().getFullYear().toString().slice(-2),
 
         descripcion: descripcion.value,
 
