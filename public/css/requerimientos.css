@@ -1,0 +1,197 @@
+/* =========================================
+TABLA
+========================================= */
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+th,
+td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+.tabla-responsive{
+    overflow-x:auto;
+}
+/* =========================================
+VENCIDOS
+========================================= */
+
+.vencido {
+    background-color: #ffb3b3 !important;
+    color: #7a0000 !important;
+    font-weight: bold;
+}
+
+/* =========================================
+URGENTES
+========================================= */
+
+.urgente {
+    background-color: #ffe0a3 !important;
+    color: #7a4b00 !important;
+    font-weight: bold;
+}
+
+/* =========================================
+COMPLETADOS
+========================================= */
+
+.cumplido {
+    background-color: #b8ffb8 !important;
+    color: #006400 !important;
+    font-weight: bold;
+}
+
+/* =========================================
+BOTONES
+========================================= */
+
+.btn-editar {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.btn-eliminar {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+
+/* ==========================
+   REQUERIMIENTOS
+========================== */
+
+tr.vencido{
+    background:#ff4d4d !important;
+    color:white;
+    font-weight:bold;
+}
+
+tr.urgente{
+    background:#ffc0cb !important;
+    color:black;
+    font-weight:bold;
+}
+
+tr.cumplido{
+    background:#8fd18f !important;
+    color:black;
+    font-weight:bold;
+}
+.col-descripcion {
+    width: 25%;
+}
+.menu-superior button{
+
+    background: transparent;
+
+    color: #e90404;
+
+    border: 2px solid #0a0a0a;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.menu-superior button:hover{
+
+    background: rgba(250,0,0,0.1);
+
+    color: white;
+
+    box-shadow: 0 0 12px #090909;
+}
+
+.btn-urgente{
+    background:rgba(255,152,0,0.25);
+    border:1px solid #ff9800;
+}
+
+.btn-vencido{
+    background:rgba(211,47,47,0.25);
+    border:1px solid #d32f2f;
+}
+
+.btn-hoy{
+    background:rgba(33,150,243,0.25);
+    border:1px solid #2196f3;
+}
+
+.btn-semana{
+    background:rgba(156,39,176,0.25);
+    border:1px solid #9c27b0;
+}
+
+.btn-completado{
+    background:rgba(46,125,50,0.25);
+    border:1px solid #2e7d32;
+}
+
+.btn-todos{
+    background:rgba(97,97,97,0.25);
+    border:1px solid #616161;
+}
+
+.filtros-requerimientos{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:20px auto;
+}
+
+.btn-activo{
+
+    box-shadow: 0 0 15px #ff9800;
+
+    transform: scale(1.05);
+}
+
+.contenedor-busqueda{
+
+    text-align:center;
+
+    margin:20px 0;
+}
+
+#buscadorRequerimientos{
+
+    width:400px;
+
+    max-width:90%;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    border:1px solid #999;
+
+    font-size:16px;
+
+    background:white;
+}
+

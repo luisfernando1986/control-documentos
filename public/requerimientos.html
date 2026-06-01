@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>REQUERIMIENTOS</title>
+
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/requerimientos.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>CONTROL DE REQUERIMIENTOS DIARIOS, </h1>
+    <h1>SEMANALES, MENSUALES, TRIMESTRALES Y SEMESTRALES</h1>
+
+<div class="menu-superior">
+
+    <button onclick="window.location.href='/index.html'">
+        📁 CONTROL DOCUMENTAL
+    </button>
+
+ 
+
+</div>
+
+<hr>
+
+<form id="formRequerimiento">
+
+
+    <input
+        type="hidden"
+        id="proximaFechaOculta"
+    />
+    <h2>REGISTRO DE REQUERIMIENTOS</h2>
+<h3>REQUERIMIENTO</h3>
+<input type="text" id="nombre" required>
+
+<h3>TIPO</h3>
+
+<select id="tipo" required>
+
+<option value="">SELECCIONE</option>
+
+<option value="Diario">DIARIO</option>
+
+<option value="Semanal">SEMANAL</option>
+
+<option value="Mensual">MENSUAL</option>
+
+<option value="Trimestral">TRIMESTRAL</option>
+
+<option value="Semestral">SEMESTRAL</option>
+
+</select>
+
+
+<div id="contenedorDia">
+
+<div id="contenedorDia">
+
+    <label>DÍA DE CUMPLIMIENTO</label>
+
+    <select id="diaCumplimiento">
+
+        <option value="">SELECCIONE</option>
+
+        <option value="Lunes">Lunes</option>
+        <option value="Martes">Martes</option>
+        <option value="Miércoles">Miércoles</option>
+        <option value="Jueves">Jueves</option>
+        <option value="Viernes">Viernes</option>
+        <option value="Sábado">Sábado</option>
+        <option value="Domingo">Domingo</option>
+
+    </select>
+
+</div>
+
+</div>
+
+
+
+
+<h3>RESPONSABLE</h3>
+<input type="text" id="responsable" required>
+
+<h3>DESCRIPCIÓN</h3>
+<textarea id="descripcion"></textarea>
+
+<h3>FECHA INICIO</h3>
+<input type="date" id="fechaInicio" required>
+
+
+
+
+            <h2>REGISTRO DE RESPUESTA</h2>
+            <h3>DOCUMENTO DE RESPUESTA</h3>
+
+                <select id="tipoRespuesta">
+
+                <option value="">
+                Seleccione
+                </option>
+
+                <option value="OFICIO">
+                OFICIO
+                </option>
+
+                <option value="RADIOGRAMA">
+                RADIOGRAMA
+                </option>
+
+                </select>
+
+                <h3>NÚMERO RESPUESTA</h3>
+
+                <input
+                type="text"
+                id="numeroRespuesta"
+                placeholder="Ej: OF. 234/26"
+                >
+
+                <h3>FECHA RESPUESTA</h3>
+
+                <input
+                type="date"
+                id="fechaRespuesta"
+                >
+
+
+
+<button type="submit">
+GUARDAR REQUERIMIENTO
+</button>
+
+</form>
+
+<hr>
+
+    <div class="panel-comando">
+
+        <div class="comando-box rojo">
+            VENCIDOS
+            <span id="count-vencidos">0</span>
+        </div>
+
+        <div class="comando-box naranja">
+            URGENTES
+            <span id="count-urgentes">0</span>
+        </div>
+
+        <div class="comando-box verde">
+            COMPLETADOS
+            <span id="count-completados">0</span>
+        </div>
+
+    </div>
+
+<h2>LISTA DE REQUERIMIENTOS</h2>
+    <div class="filtros-requerimientos">
+
+    <button 
+        type="button"   
+        class="btn-filtro btn-urgente"
+        onclick="setFiltro('URGENTES')">
+        URGENTES
+    </button>
+
+    <button 
+        type="button" 
+        class="btn-filtro btn-vencido"
+        onclick="setFiltro('VENCIDOS')">
+        VENCIDOS
+    </button>
+
+    <button 
+        type="button"
+        class="btn-filtro btn-hoy"
+        onclick="setFiltro('HOY')">
+        HOY
+    </button>
+
+    <button 
+        type="button" 
+        class="btn-filtro btn-semana"
+        onclick="setFiltro('SEMANA')">
+        SEMANA
+    </button>
+
+    <button 
+        type="button" 
+        class="btn-filtro btn-completado"
+        onclick="setFiltro('COMPLETADOS')">
+        COMPLETADOS
+    </button>
+
+    <button
+    type="button"
+    class="btn-filtro btn-todos"
+    onclick="setFiltro('TODOS')">
+        TODOS
+    </button>
+
+
+
+
+</div>
+
+    <div class="contenedor-busqueda">
+
+        <input
+            type="text"
+            id="buscadorRequerimientos"
+            placeholder="Buscar por nombre, responsable o número de respuesta..."
+            onkeyup="cargarRequerimientos()"
+        >
+
+    </div>
+<div class="tabla-responsive">
+
+<table>
+
+<thead>
+
+<tr>
+<th>CÓDIGO</th>
+<th>TIPO DE DOCUMENTO</th>
+<th>FRECUENCIA DE ENVIO</th>
+<th>RESPONSABLE</th>
+<th class="descripcion-col">DESCRIPCIÓN</th>
+<th>FECHA DE REQUERIMIENTO</th>
+<th>PROXIMA FECHA</th>
+<th>ESTADO</th>
+<th>DOCUMENTO DE RESPUESTA</th>
+<th>NÚMERO DE DOC.</th>
+<th>FECHA DE RESPUESTA</th>
+
+<th>ACCIONES</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tablaRequerimientos"></tbody>
+
+</table>
+</div>
+
+</div>
+
+<script src="js/requerimientos.js"></script>
+
+</body>
+</html>

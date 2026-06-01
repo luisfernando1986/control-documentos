@@ -9,8 +9,8 @@ body {
     margin: 0;
     padding: 10px;
 
-    background-image: url('FONDO.jpg');
-    background-size: cover;
+    background-image: url('../img/prevencion.jpeg');
+    background-size: 80% 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -18,7 +18,7 @@ body {
 
 /* ================== CONTENEDOR ================== */
 .container {
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.1);
     padding: 15px;
     border-radius: 10px;
 
@@ -29,23 +29,35 @@ body {
 /* ================== TITULO ================== */
 h1 {
     text-align: center;
+    margin-bottom: 5px;
+    color: #1a2a44;
     font-size: 22px;
 }
-
+h3 {
+    text-align: center;
+    color: #1a2a44;
+    margin: 4px 0 2px 0;  /* 👈 MÁS COMPACTO */
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
 /* ================== FORMULARIO ================== */
 form {
     display: grid;
-    gap: 10px;
+    gap: 6px;
     margin: 0 auto 20px auto;
     max-width: 600px;
 
     padding: 15px;
     border-radius: 10px;
 
-    background: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.3);
     position: relative;
 }
-
+label {
+    margin: 2px 0;
+    font-size: 13px;
+}
 /* 🔥 ESCUDO SOLO EN PC */
 form::after {
     content: "";
@@ -53,15 +65,16 @@ form::after {
     top: 50%;
     left: 50%;
 
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
 
-    background-image: url('RI6DRCAMPOS.jpeg');
+    background-image: url('../img/RI6DRCAMPOS.jpeg');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 50%;
 
-    opacity: 0.1;
+    opacity: 0.60;
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
@@ -158,7 +171,7 @@ td {
 .secciones-box {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
+    gap: 3px;
 }
 
 /* ================== EXPORTAR ================== */
@@ -258,4 +271,86 @@ button[onclick="exportarExcel()"] {
         flex: 1;
         font-size: 12px;
     }
+}
+
+/* ================= BOTONES EDITAR / ELIMINAR ================= */
+
+.btn-editar {
+    background-color: #007bff; /* azul */
+    color: white;
+    margin-right: 5px;  /* 👈 separación */
+}
+
+.btn-eliminar {
+    background-color: #dc3545; /* rojo */
+    color: white;
+}
+
+/* HOVER (efecto al pasar el mouse) */
+.btn-editar:hover {
+    background-color: #0056b3;
+}
+
+.btn-eliminar:hover {
+    background-color: #a71d2a;
+}
+.btn-editar,
+.btn-eliminar {
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+
+
+/* 🔥 FORZAR ESTILO BOTONES EN TABLA */
+td .btn-editar,
+td .btn-eliminar {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    display: inline-block;
+}
+
+td .btn-editar {
+    background-color: #007bff !important;
+}
+
+td .btn-eliminar {
+    background-color: #dc3545 !important;
+}
+
+
+.elementos-box label,
+.secciones-box label {
+    font-weight: 700; /* más fuerte que bold */
+}
+.menu-superior button{
+
+    background: transparent;
+
+    color: #e90404;
+
+    border: 2px solid #0a0a0a;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.menu-superior button:hover{
+
+    background: rgba(250,0,0,0.1);
+
+    color: white;
+
+    box-shadow: 0 0 12px #090909;
 }

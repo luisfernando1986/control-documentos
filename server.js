@@ -1,3 +1,6 @@
+require('dotenv').config();
+/*============================================*/
+
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -8,20 +11,25 @@ const fs = require('fs');
 
 const Documento = require('./models/Documento');
 const Usuario = require('./models/Usuario');
+const Requerimiento = require('./models/Requerimiento');
 const Log = require('./models/Log');
 const Historial = require('./models/Historial');
 const Eliminado = require('./models/Eliminado');
 
 const app = express();
-
 // ================= MONGODB =================
 
+console.log(process.env.MONGO_URI);
+
 mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log('✅ MongoDB conectado'))
-.catch((error) => console.log('❌ ERROR MONGODB:', error));
+    .then(() => {
+        console.log('✅ MongoDB conectado');
+    })
+    .catch((error) => {
+        console.log('❌ ERROR MONGODB:', error);
+    });
 
 // ================= CREAR ADMIN =================
-
 async function crearAdminInicial() {
     const existe = await Usuario.findOne({ usuario: 'admin' });
 
@@ -95,6 +103,7 @@ async function registrarHistorial(usuario, documento, antes, despues) {
 // ================= LOGIN =================
 
 app.post('/login', async (req, res) => {
+    
 
     try {
 
@@ -178,6 +187,14 @@ app.post('/documentos', verificarSesion, async (req, res) => {
 });
 
 app.put('/documentos/:id', verificarSesion, async (req, res) => {
+    if(
+    req.session.rol !== 'ADMIN' &&
+    req.session.rol !== 'EDITOR'
+){
+    return res.status(403).json({
+        mensaje:'No autorizado'
+    });
+}
 
     const antes = await Documento.findById(req.params.id);
 
@@ -194,6 +211,11 @@ app.put('/documentos/:id', verificarSesion, async (req, res) => {
 });
 
 app.delete('/documentos/:id', verificarSesion, async (req, res) => {
+    if(req.session.rol !== 'ADMIN'){
+    return res.status(403).json({
+        mensaje:'No autorizado'
+    });
+}
 
     const eliminado = await Documento.findById(req.params.id);
 
@@ -375,10 +397,237 @@ async function hacerBackup() {
 
 setInterval(hacerBackup, 24 * 60 * 60 * 1000);
 
+app.get('/verificar-db', async (req, res) => {
+
+    const docs = await Documento.find().limit(5);
+
+    res.json(docs);
+
+});
+
 // ================= SERVIDOR =================
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log('Servidor corriendo en puerto', PORT);
+
+    console.log('===================================');
+    console.log('✅ SERVIDOR CORRIENDO');
+    console.log('🌐 http://localhost:' + PORT);
+    console.log('===================================');
+
 });
+
+/* =========================================
+   REQUERIMIENTOS
+========================================= */
+
+/* =========================================
+   API REQUERIMIENTOS
+========================================= */
+
+// OBTENER
+app.get(
+    '/api/requerimientos',
+    verificarSesion,
+    async (req, res) => {
+    try {
+
+        const datos = await Requerimiento.find()
+            .sort({ proximaFecha: 1 });
+
+        res.json(datos);
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            mensaje: 'Error obteniendo requerimientos'
+        });
+    }
+});
+
+
+app.get(
+    '/api/requerimientos/:id',
+    verificarSesion,
+    async (req, res) => {
+
+    try {
+
+        const requerimiento =
+            await Requerimiento.findById(
+                req.params.id
+            );
+
+        if(!requerimiento){
+            return res.status(404).json({
+                mensaje:'No encontrado'
+            });
+        }
+
+        res.json(requerimiento);
+
+    } catch(error){
+
+        console.log(error);
+
+        res.status(500).json({
+            mensaje:'Error'
+        });
+    }
+});
+
+
+// CREAR
+app.post(
+    '/api/requerimientos',
+    verificarSesion,
+    async (req, res) => {
+        if(
+            req.session.rol !== 'ADMIN' &&
+            req.session.rol !== 'EDITOR'
+        ){
+            return res.status(403).json({
+                mensaje:'No autorizado'
+            });
+        }
+    try {
+
+        if(
+            req.body.tipoRespuesta?.trim() !== '' &&
+            req.body.numeroRespuesta?.trim() !== '' &&
+            req.body.fechaRespuesta
+        ) {
+
+            req.body.estado = 'Completado';
+
+        } else {
+
+            req.body.estado = 'Pendiente';
+        }
+
+        // ==========================
+        // GENERAR CÓDIGO AUTOMÁTICO
+        // ==========================
+
+        const ultimo = await Requerimiento
+            .findOne()
+            .sort({ createdAt: -1 });
+
+        let correlativo = 1;
+
+        if (
+            ultimo &&
+            ultimo.codigoRequerimiento
+        ) {
+
+            const numero = parseInt(
+                ultimo.codigoRequerimiento.replace(
+                    'REQ-',
+                    ''
+                )
+            );
+
+            correlativo = numero + 1;
+        }
+
+        req.body.codigoRequerimiento =
+            'REQ-' +
+            String(correlativo).padStart(4, '0');
+
+        const nuevo =
+            new Requerimiento(req.body);
+
+        await nuevo.save();
+
+        res.json({
+            ok: true
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            ok: false
+        });
+    }
+});
+
+
+// EDITAR
+// EDITAR
+app.put(
+    '/api/requerimientos/:id',
+    verificarSesion,
+    async (req, res) => {
+
+    if(
+        req.session.rol !== 'ADMIN' &&
+        req.session.rol !== 'EDITOR'
+    ){
+        return res.status(403).json({
+            mensaje:'No autorizado'
+        });
+    }
+    try {
+
+        if(
+            req.body.tipoRespuesta?.trim() !== '' &&
+            req.body.numeroRespuesta?.trim() !== '' &&
+            req.body.fechaRespuesta
+        ) {
+
+            req.body.estado = 'Completado';
+
+        } else {
+
+            req.body.estado = 'Pendiente';
+        }
+
+        await Requerimiento.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true }
+        );
+
+        res.json({
+            ok: true
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            ok: false
+        });
+    }
+});
+
+
+// ELIMINAR
+app.delete(
+    '/api/requerimientos/:id',
+    verificarSesion,
+    async (req, res) => {
+
+        if(req.session.rol !== 'ADMIN'){
+            return res.status(403).json({
+                mensaje:'No autorizado'
+            });
+        }
+
+        await Requerimiento.findByIdAndDelete(
+            req.params.id
+        );
+
+        res.json({
+            ok:true
+        });
+    }
+);
+
+

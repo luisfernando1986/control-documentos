@@ -7,7 +7,7 @@
 
 <title>Control Documental</title>
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/css/styles.css">
 
 </head>
 <body>
@@ -27,7 +27,31 @@
                 
 <div class="container">
 
-<h1>CONTROL DOCUMENTAL</h1>
+<h1>CONTROL DE DOCUMENTOS DEL</h1>
+<h1>RI-6 ''DR. CAMPOS''</h1>
+
+<div class="menu-superior">
+
+    <button onclick="window.location.href='/requerimientos.html'">
+        REQUERIMIENTOS
+    </button>
+
+    <button id="btnUsuarios"
+        onclick="window.location.href='/usuarios.html'">
+        USUARIOS
+    </button>
+
+    <button id="btnEliminados"
+        onclick="window.location.href='/eliminados.html'">
+        PAPELERA
+    </button>
+
+    <button id="btnLogs"
+        onclick="window.location.href='/logs.html'">
+        LOGS
+    </button>
+
+</div>
 
 <form id="formulario">
 
@@ -61,7 +85,7 @@
 <input type="text" id="descripcion" placeholder="ANTECEDENTES" required>
 
 <!-- ================= ELEMENTOS ================= -->
-<h2>DOCUMENTO DE RESPUESTA</h2>
+<h3>DOCUMENTO REQUERIDOS</h3>
 <div class="elementos-box">
 
 <label><input type="checkbox" value="INFORME"> INFORME</label>
@@ -70,14 +94,14 @@
 <label><input type="checkbox" value="RR.NN. FIRMADA"> RR.NN. FIRMADA</label>
 <label><input type="checkbox" value="RR.NN."> RR.NN.</label>
 
-<label><input type="checkbox" id="check_otro"> OTROS</label>
+<label><input type="checkbox" id="check_otro" value=""> OTROS</label>
 <input type="text" id="otro_elemento" placeholder="Otro elemento" style="display:none;">
 
 </div>
 
 <!-- ================= SECCIONES ================= -->
 
-<label>SECCIONES DESTINO</label>
+<h3>SECCIONES QUE ELAVORA EL DOCUMENTO</h3>
 
 <div class="secciones-box">
 
@@ -95,7 +119,11 @@
 
 <!-- 🔥 OTROS -->
 <label>
-    <input type="checkbox" id="check_otros">
+    <input 
+    type="checkbox"
+    id="check_otros"
+    onchange="toggleOtros()"
+  >
     OTROS
 </label>
 
@@ -107,19 +135,21 @@
 <!-- ================= DATOS ================= -->
 
 <input type="text" id="instructor" placeholder="Instructor Responsable" required>
+  <h3>FECHA DE INGRESO</h3>
 <input type="date" id="fecha_recepcion" required>
+  <h3>FECHA LIMITE</h3>
 <input type="date" id="fecha_limite" required>
 
 <!-- ================= RESPUESTA ================= -->
 
-<h3>REGISTRO DE RESPUESTA</h3>
-
+<h2>REGISTRO DE RESPUESTA</h2>
+<h3>NÚMERO DE OFICIO DE RESPUESTA</h3>
 <input 
     type="text" 
     id="oficio_respuesta" 
     placeholder="N° Oficio de Respuesta (ej: DPTO I Nº 123)"
 >
-
+<h3>FECHA DE RESPUESTA</h3>
 <input 
     type="date" 
     id="fecha_respuesta"
@@ -189,12 +219,12 @@ onkeyup="aplicarFiltros()"
 <button id="btn-todos" onclick="setFiltro('TODOS')">TODOS</button>
 <button id="btn-pendiente" onclick="setFiltro('Pendiente')">PENDIENTE</button>
 <button id="btn-cumplido" onclick="setFiltro('Cumplido')">CUMPLIDO</button>
-<button id="btn-urgente" onclick="setFiltro('URGENTE')">URGENTE</button>
+<button id="btn-urgente" onclick="setFiltro('URGENTE')">VENCIDOS</button>
 
 </div>
 
 <!-- ================= TABLA ================= -->
-
+<h2>VERIFICACIÓN DE DOCUMENTOS</h2>
 <table>
 
 <thead>
@@ -222,7 +252,7 @@ onkeyup="aplicarFiltros()"
 
 
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 
 <audio id="sonidoAlerta" src="alerta.mp3"></audio>
 

@@ -1,3 +1,5 @@
+console.log('✅ script documentos cargado');
+
 const rolUsuario = localStorage.getItem('rol');
 const rangoUsuario = localStorage.getItem('rango');
 
@@ -24,7 +26,7 @@ let alertaActiva = false;/*xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 const buscador = document.getElementById('buscador');
 
 let documentosGlobal = [];
-let filtroActivo = 'TODOS';
+let filtroActivo = 'Pendiente';
 
 const check_otro = document.getElementById('check_otro');
 const otro_elemento = document.getElementById('otro_elemento');
@@ -48,10 +50,46 @@ const estado = document.getElementById('estado');
 
 const oficio_respuesta = document.getElementById('oficio_respuesta');
 
+oficio_respuesta.addEventListener('blur', () => {
+
+    let valor = oficio_respuesta.value.trim();
+
+    if(valor !== '' && !valor.includes('/')) {
+
+        const anio = new Date()
+            .getFullYear()
+            .toString()
+            .slice(-2);
+
+        oficio_respuesta.value =
+            valor + '/' + anio;
+    }
+});
+
 const fecha_respuesta = document.getElementById('fecha_respuesta');
 
 let editandoId = null;
 
+
+function formatearFecha(fecha) {
+
+    if(!fecha) return '';
+
+    const meses = [
+        'ENE', 'FEB', 'MAR',
+        'ABR', 'MAY', 'JUN',
+        'JUL', 'AGO', 'SEP',
+        'OCT', 'NOV', 'DIC'
+    ];
+
+    const partes = fecha.split('-');
+
+    const anio = partes[0];
+    const mes = meses[parseInt(partes[1]) - 1];
+    const dia = partes[2];
+
+    return `${dia}-${mes}-${anio}`;
+}
 // ================== BLOQUEO POR ROL ==================
 
 // 🔥 IMPORTANTE:
@@ -113,18 +151,24 @@ tipo_documento.addEventListener('change', () => {
 
 async function cargarDocumentos() {
 
+    console.log('🚀 intentando cargar documentos');
+
     try {
 
         const res = await fetch('/documentos');
 
-        if(!res.ok) {
+                console.log('STATUS DOCUMENTOS:', res.status);
 
-            console.log('Sesión no autorizada');
+                const docs = await res.json();
+
+        console.log('DOCS:', docs);
+
+        if(!Array.isArray(docs)) {
+
+            console.log('Respuesta inválida');
 
             return;
         }
-
-        const docs = await res.json();
 
         documentosGlobal = docs;
 
@@ -134,9 +178,11 @@ async function cargarDocumentos() {
 
     } catch(error) {
 
-        console.log('ERROR CARGANDO:', error);
+        console.log('ERROR DOCUMENTOS:', error);
     }
 }
+
+// ================== MOSTRAR DOCUMENTOS ==================
 
 // ================== MOSTRAR DOCUMENTOS ==================
 
@@ -146,15 +192,32 @@ function mostrarDocumentos(docs) {
 
     docs.forEach(doc => {
 
+        // ===== FECHA DE HOY =====
         const hoy = new Date();
 
-        const limite = new Date(doc.fecha_limite);
+        const hoySoloFecha = new Date(
+            hoy.getFullYear(),
+            hoy.getMonth(),
+            hoy.getDate()
+        );
 
-        const diferencia = Math.ceil(
-            (limite - hoy) / (1000 * 60 * 60 * 24)
+        // ===== FECHA LIMITE =====
+        const partesFecha = doc.fecha_limite.split('-');
+
+        const limite = new Date(
+            parseInt(partesFecha[0]),
+            parseInt(partesFecha[1]) - 1,
+            parseInt(partesFecha[2])
+        );
+
+        // ===== DIFERENCIA =====
+        const diferencia = Math.floor(
+            (limite - hoySoloFecha) / (1000 * 60 * 60 * 24)
         );
 
         let clase = '';
+
+        // ===== COLORES =====
 
         if(doc.estado === 'Cumplido') {
 
@@ -162,10 +225,12 @@ function mostrarDocumentos(docs) {
 
         } else if(diferencia < 0) {
 
+            // ROJO SOLO SI YA PASÓ EL DÍA
             clase = 'vencido';
 
-        } else if(diferencia >= 0 && diferencia <= 1) {
+        } else if(diferencia <= 1) {
 
+            // ROSADO SI ES HOY O MAÑANA
             clase = 'urgente';
         }
 
@@ -184,49 +249,41 @@ function mostrarDocumentos(docs) {
 
                 <td>${doc.instructor}</td>
 
-                <td>${doc.fecha_recepcion}</td>
+                <td>${formatearFecha(doc.fecha_recepcion)}</td>
 
-                <td>${doc.fecha_limite}</td>
+                <td>${formatearFecha(doc.fecha_limite)}</td>
 
                 <td>${doc.oficio_respuesta || ''}</td>
 
-                <td>${doc.fecha_respuesta || ''}</td>
+                <td>${formatearFecha(doc.fecha_respuesta)}</td>
 
                 <td>${doc.estado}</td>
 
                 <td>
 
                     ${
-                            rolUsuario === 'ADMIN'
+                        rolUsuario === 'ADMIN'
+                        ?
+                        `
+                        <button class="btn-editar" onclick="editarDocumento('${doc._id}')">
+                            Editar
+                        </button>
 
-                            ?
-
-                            `
-                            <button onclick="editarDocumento('${doc._id}')">
-                                Editar
-                            </button>
-
-                            <button onclick="eliminarDocumento('${doc._id}')">
-                                Eliminar
-                            </button>
-                            `
-
-                            :
-
-                            rolUsuario === 'EDITOR'
-
-                            ?
-
-                            `
-                            <button onclick="editarDocumento('${doc._id}')">
-                                Editar
-                            </button>
-                            `
-
-                            :
-
-                            `<span style="color:gray;">SOLO LECTURA</span>`
-                        }
+                        <button class="btn-eliminar" onclick="eliminarDocumento('${doc._id}')">
+                            Eliminar
+                        </button>
+                        `
+                        :
+                        rolUsuario === 'EDITOR'
+                        ?
+                        `
+                        <button class="btn-editar" onclick="editarDocumento('${doc._id}')">
+                            Editar
+                        </button>
+                        `
+                        :
+                        `<span style="color:gray;">SOLO LECTURA</span>`
+                    }
 
                 </td>
 
@@ -291,24 +348,26 @@ function aplicarFiltros() {
 
         if(filtroActivo === 'URGENTE') {
 
-            const hoy = new Date();
+    const hoy = new Date();
+    hoy.setHours(0,0,0,0);
 
-            filtrados = filtrados.filter(doc => {
+    filtrados = filtrados.filter(doc => {
 
-                const limite = new Date(doc.fecha_limite);
+        const partesFecha = doc.fecha_limite.split('-');
 
-                const diferencia = Math.ceil(
-                    (limite - hoy) / (1000 * 60 * 60 * 24)
-                );
+        const limite = new Date(
+            parseInt(partesFecha[0]),
+            parseInt(partesFecha[1]) - 1,
+            parseInt(partesFecha[2])
+        );
 
-                return (
-                    doc.estado !== 'Cumplido'
-                    &&
-                    diferencia <= 1
-                );
-            });
-
-        } else {
+        return (
+            doc.estado !== 'Cumplido'
+            &&
+            limite < hoy
+        );
+    });
+} else {
 
             filtrados = filtrados.filter(doc =>
                 doc.estado === filtroActivo
@@ -321,35 +380,58 @@ function aplicarFiltros() {
 
 // ================== PANEL ALERTAS ==================
 
+// ================== PANEL ALERTAS ==================
+
 function actualizarPanelComando() {
 
     let vencidos = 0;
     let urgentes = 0;
     let cumplidos = 0;
 
-    const hoy = new Date();
-
     documentosGlobal.forEach(doc => {
 
-        const limite = new Date(doc.fecha_limite);
+        // ===== FECHA DE HOY =====
+        const hoy = new Date();
 
-        const diferencia = Math.ceil(
-            (limite - hoy) / (1000 * 60 * 60 * 24)
+        const hoySoloFecha = new Date(
+            hoy.getFullYear(),
+            hoy.getMonth(),
+            hoy.getDate()
         );
 
+        // ===== FECHA LIMITE =====
+        const partesFecha = doc.fecha_limite.split('-');
+
+        const limite = new Date(
+            parseInt(partesFecha[0]),
+            parseInt(partesFecha[1]) - 1,
+            parseInt(partesFecha[2])
+        );
+
+        // ===== DIFERENCIA =====
+        const diferencia = Math.floor(
+            (limite - hoySoloFecha) / (1000 * 60 * 60 * 24)
+        );
+
+        // ===== CONTADORES =====
         if(doc.estado === 'Cumplido') {
 
             cumplidos++;
 
         } else if(diferencia < 0) {
 
+            // SOLO SI YA PASÓ EL DÍA
             vencidos++;
 
         } else if(diferencia <= 1) {
 
+            // HOY Y MAÑANA
             urgentes++;
         }
+
     });
+
+    // ===== ACTUALIZAR PANEL =====
 
     document.getElementById('count-vencidos').textContent = vencidos;
 
@@ -360,6 +442,8 @@ function actualizarPanelComando() {
     const panel = document.querySelector('.panel-comando');
 
     const audio = document.getElementById('sonidoAlerta');
+
+    // ===== ALERTA =====
 
     if(vencidos > 0 || urgentes > 0) {
 
@@ -401,8 +485,12 @@ function obtenerElementos() {
 
     checks.forEach(check => {
 
-        if(check.checked && check.value) {
-
+        if(
+            check.checked &&
+            check.value &&
+            check.value !== 'on'
+        ) {
+        
             elementos.push(check.value);
         }
     });
@@ -427,33 +515,54 @@ function obtenerSecciones() {
     document.querySelectorAll(
         '.secciones-box input[type="checkbox"]'
     ).forEach(cb => {
+    
+        if (
+            cb.checked &&
+            cb.id !== 'check_otros' &&
+            cb.value
+        ) {
 
-        if (cb.checked && cb.id !== 'check_otros') {
-            secciones.push(cb.value.toUpperCase());
+            secciones.push(
+                cb.value.toUpperCase()
+            );
         }
     });
 
     // OTROS
-    const otros = document.getElementById('otros_seccion');
+    const otros = document.getElementById(
+        'otros_seccion'
+    );
 
-    if (otros && otros.value.trim() !== '') {
-        secciones.push(otros.value.toUpperCase());
+    if (
+        document.getElementById('check_otros').checked &&
+        otros &&
+        otros.value.trim() !== ''
+    ) {
+
+        secciones.push(
+            otros.value.trim().toUpperCase()
+        );
     }
 
     return secciones.join(', ');
 }
 // ================== GUARDAR ==================
 
+// ================== GUARDAR ==================
+
 formulario.addEventListener('submit', async (e) => {
 
     e.preventDefault();
 
-    let nuevoEstado = estado.value;
+    let nuevoEstado = 'Pendiente';
 
-    if(oficio_respuesta.value.trim() !== '') {
-
-        nuevoEstado = 'Cumplido';
-    }
+        if(
+            oficio_respuesta.value.trim() !== '' &&
+            fecha_respuesta.value !== ''
+        ) {
+        
+            nuevoEstado = 'Cumplido';
+        }
 
     const documento = {
 
@@ -461,13 +570,17 @@ formulario.addEventListener('submit', async (e) => {
 
             (
                 tipo_documento.value === 'OTROS'
-                    ? otro_tipo.value
+                    ? otro_tipo.value.trim().toUpperCase()
                     : tipo_documento.value
             )
 
             + ' ' +
 
-            numero.value,
+            numero.value.trim().toUpperCase()
+            
+            + '/' +
+            
+            new Date().getFullYear().toString().slice(-2),
 
         descripcion: descripcion.value,
 
@@ -540,6 +653,8 @@ formulario.addEventListener('submit', async (e) => {
 
         otro_tipo.style.display = 'none';
 
+        document.getElementById('otros_seccion').style.display = 'none';
+
         cargarDocumentos();
 
     } catch(error) {
@@ -610,7 +725,18 @@ async function editarDocumento(id) {
 
         fecha_limite.value = doc.fecha_limite || '';
 
-        estado.value = doc.estado || 'Pendiente';
+        if(
+            doc.oficio_respuesta &&
+            doc.oficio_respuesta.trim() !== '' &&
+            doc.fecha_respuesta
+        ) {
+        
+            estado.value = 'Cumplido';
+        
+        } else {
+        
+            estado.value = 'Pendiente';
+        }
 
         oficio_respuesta.value = doc.oficio_respuesta || '';
 
@@ -620,12 +746,30 @@ async function editarDocumento(id) {
 
         const partes = doc.numero_documento.split(' ');
 
-        numero.value = partes[partes.length - 1];
-
-        tipo_documento.value =
-            doc.numero_documento
-                .replace(numero.value, '')
+            const ultimoParte = partes[partes.length - 1];
+            
+            numero.value = ultimoParte.split('/')[0];
+            
+            const tipoCompleto = doc.numero_documento
+                .replace(ultimoParte, '')
                 .trim();
+        
+        const opciones = Array.from(
+            tipo_documento.options
+        ).map(o => o.value);
+        
+        if(opciones.includes(tipoCompleto)) {
+        
+            tipo_documento.value = tipoCompleto;
+        
+        } else {
+        
+            tipo_documento.value = 'OTROS';
+        
+            otro_tipo.style.display = 'block';
+        
+            otro_tipo.value = tipoCompleto;
+        }
 
         // ================= LIMPIAR CHECKBOX =================
 
@@ -853,3 +997,19 @@ document.onmousemove = reiniciarTemporizador;
 document.onkeypress = reiniciarTemporizador;
 
 document.onclick = reiniciarTemporizador;
+
+
+// ==========================
+// MOSTRAR SOLO A ADMIN
+// ==========================
+
+const rol = localStorage.getItem('rol');
+
+if(rol !== 'ADMIN'){
+
+    document.getElementById('btnUsuarios').style.display = 'none';
+
+    document.getElementById('btnEliminados').style.display = 'none';
+
+    document.getElementById('btnLogs').style.display = 'none';
+}
