@@ -145,8 +145,8 @@ function aplicarFiltros(datos) {
             return false;
         }
 
-        const fechaReq =
-            new Date(req.fechaInicio + 'T00:00:00');
+                const fechaReq =
+            new Date(req.fechaInicio);
 
         fechaReq.setHours(0,0,0,0);
 
@@ -254,8 +254,8 @@ function mostrarRequerimientos(datos) {
 
         hoy.setHours(0,0,0,0);
 
-        const fechaReq =
-            new Date(req.fechaInicio + 'T00:00:00');
+                const fechaReq =
+            new Date(req.fechaInicio);
 
         fechaReq.setHours(0,0,0,0);
 
@@ -273,7 +273,7 @@ function mostrarRequerimientos(datos) {
         // COLORES
         // =====================================
         let clase = '';
-        if(req.estado === 'Cumplido'){
+        if(req.estado === 'Completado'){
 
                 clase = 'cumplido';
 
@@ -910,7 +910,7 @@ function actualizarPanel(datos) {
         hoy.setHours(0,0,0,0);
 
         const fechaReq =
-            new Date(req.fechaInicio + 'T00:00:00');
+            new Date(req.fechaInicio);
 
         fechaReq.setHours(0,0,0,0);
 
@@ -929,7 +929,7 @@ function actualizarPanel(datos) {
                     diferencia
                 );
 
-        if(req.estado === 'Cumplido') {
+        if(req.estado === 'Completado') {
 
             completados++;
 
