@@ -37,7 +37,13 @@ const numero = document.getElementById('numero');
 
 const descripcion = document.getElementById('descripcion');
 const formulario = document.getElementById('formulario');
+// ================== BLOQUEAR DASHBOARD A LECTURA ==================
 
+if(rolUsuario === 'LECTURA') {
+
+    formulario.style.display = 'none';
+
+}
 const tabla = document.getElementById('tabla');
 
 const instructor = document.getElementById('instructor');
@@ -106,11 +112,12 @@ const btnExportar = document.querySelector(
 
 if(rolUsuario === 'LECTURA') {
 
-    formulario.style.display = 'none';
-
     if(btnExportar) {
         btnExportar.style.display = 'none';
     }
+
+    // ocultar formulario completo
+    formulario.style.display = 'none';
 }
 
 // ===== EDITOR =====
@@ -282,7 +289,7 @@ function mostrarDocumentos(docs) {
                         </button>
                         `
                         :
-                        `<span style="color:gray;">SOLO LECTURA</span>`
+                        `<span style="color:gray;">SOLO REGISTRO</span>`
                     }
 
                 </td>
@@ -697,9 +704,16 @@ async function eliminarDocumento(id) {
 
 async function editarDocumento(id) {
 
-    try {
+        if(rolUsuario === 'LECTURA') {
 
-        const res = await fetch('/documentos');
+            alert('No tiene permisos para editar');
+
+            return;
+        }
+
+        try {
+
+            const res = await fetch('/documentos');
 
         const docs = await res.json();
 

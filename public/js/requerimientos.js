@@ -1,7 +1,16 @@
 console.log('✅ requerimientos.js cargado');
 
 const rolUsuario = localStorage.getItem('rol');
+if(rolUsuario === 'LECTURA') {
 
+    const panelRespuesta =
+        document.getElementById('panelRespuesta');
+
+    if(panelRespuesta) {
+
+        panelRespuesta.style.display = 'none';
+    }
+}
 const form =
     document.getElementById('formRequerimiento');
 
@@ -817,15 +826,21 @@ async function eliminarReq(id) {
 // =========================================
 // EDITAR
 // =========================================
-
 async function editar(id) {
+
+    if(rolUsuario === 'LECTURA') {
+
+        alert('No tiene permisos para editar');
+
+        return;
+    }
 
     const res =
     await fetch(
         '/api/requerimientos/' + id
     );
 
-const req =
+    const req =
     await res.json();
 
     if(!req) return;
@@ -876,16 +891,10 @@ const req =
     document.getElementById(
         'fechaRespuesta'
     ).value =
-
         req.fechaRespuesta
-
         ?
-
-        req.fechaRespuesta
-        .split('T')[0]
-
+        req.fechaRespuesta.split('T')[0]
         :
-
         '';
 
     controlarDiaCumplimiento();

@@ -484,10 +484,11 @@ app.get(
 app.post(
     '/api/requerimientos',
     verificarSesion,
-    async (req, res) => {
-        if(
+            async (req, res) => {
+                if(
             req.session.rol !== 'ADMIN' &&
-            req.session.rol !== 'EDITOR'
+            req.session.rol !== 'EDITOR' &&
+            req.session.rol !== 'LECTURA'
         ){
             return res.status(403).json({
                 mensaje:'No autorizado'
